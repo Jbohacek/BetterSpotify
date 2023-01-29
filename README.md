@@ -1,0 +1,2 @@
+# BetterSpotify
+School project
