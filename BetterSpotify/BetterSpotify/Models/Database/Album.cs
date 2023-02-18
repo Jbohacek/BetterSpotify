@@ -22,5 +22,7 @@ namespace BetterSpotify.Models.Database
         [Column(TypeName = "Varchar(50)")] public string ImageFile { get; set; } = "Resources/Image/DefaultAlbumPic";
 
         [Column(TypeName = "Date"), Required] public DateTime DateOfPublish { get; set; } = DateTime.Now;
+
+        public ICollection<Song> Songs { get; set; } = null!;
     }
 }

@@ -21,6 +21,7 @@ namespace BetterSpotify.Models.Database
         //Collections
 
         public ICollection<Album> Albums { get; set; } = null!;
+        public ICollection<Song> Songs { get; set; } = null!;
 
         //Parameters
         [Column(TypeName = "Varchar(50)"), Required] public string FirstName { get; set; } = null!;
