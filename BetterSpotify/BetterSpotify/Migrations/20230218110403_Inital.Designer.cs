@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BetterSpotify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230218104733_SongAdd")]
-    partial class SongAdd
+    [Migration("20230218110403_Inital")]
+    partial class Inital
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -118,7 +118,7 @@ namespace BetterSpotify.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("Int");
 
-                    b.Property<int>("IdAlbum")
+                    b.Property<int?>("IdAlbum")
                         .HasColumnType("int");
 
                     b.Property<int>("IdUser")
@@ -243,9 +243,7 @@ namespace BetterSpotify.Migrations
                 {
                     b.HasOne("BetterSpotify.Models.Database.Album", "Album")
                         .WithMany("Songs")
-                        .HasForeignKey("IdAlbum")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdAlbum");
 
                     b.HasOne("BetterSpotify.Models.Database.User", "User")
                         .WithMany("Songs")

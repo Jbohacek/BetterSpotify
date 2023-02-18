@@ -101,6 +101,30 @@ namespace BetterSpotify.Migrations
                     b.ToTable("TbArtist");
                 });
 
+            modelBuilder.Entity("BetterSpotify.Models.Database.Category", b =>
+                {
+                    b.Property<int>("IdCategory")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCategory"));
+
+                    b.Property<string>("ColorHex")
+                        .IsRequired()
+                        .HasColumnType("Varchar(6)");
+
+                    b.Property<string>("ImageFile")
+                        .HasColumnType("Varchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("Varchar(50)");
+
+                    b.HasKey("IdCategory");
+
+                    b.ToTable("tbCategory");
+                });
+
             modelBuilder.Entity("BetterSpotify.Models.Database.Song", b =>
                 {
                     b.Property<int>("IdSong")
@@ -109,13 +133,19 @@ namespace BetterSpotify.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdSong"));
 
+                    b.Property<DateTime>("DateOfRelease")
+                        .HasColumnType("Date");
+
                     b.Property<int?>("DiscNo")
                         .HasColumnType("Int");
 
                     b.Property<int>("Duration")
                         .HasColumnType("Int");
 
-                    b.Property<int>("IdAlbum")
+                    b.Property<int?>("IdAlbum")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdCategory")
                         .HasColumnType("int");
 
                     b.Property<int>("IdUser")
@@ -124,9 +154,6 @@ namespace BetterSpotify.Migrations
                     b.Property<string>("ImageFile")
                         .IsRequired()
                         .HasColumnType("Varchar(50)");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("Int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -138,6 +165,8 @@ namespace BetterSpotify.Migrations
                     b.HasKey("IdSong");
 
                     b.HasIndex("IdAlbum");
+
+                    b.HasIndex("IdCategory");
 
                     b.HasIndex("IdUser");
 
@@ -240,7 +269,11 @@ namespace BetterSpotify.Migrations
                 {
                     b.HasOne("BetterSpotify.Models.Database.Album", "Album")
                         .WithMany("Songs")
-                        .HasForeignKey("IdAlbum")
+                        .HasForeignKey("IdAlbum");
+
+                    b.HasOne("BetterSpotify.Models.Database.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("IdCategory")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -251,6 +284,8 @@ namespace BetterSpotify.Migrations
                         .IsRequired();
 
                     b.Navigation("Album");
+
+                    b.Navigation("Category");
 
                     b.Navigation("User");
                 });

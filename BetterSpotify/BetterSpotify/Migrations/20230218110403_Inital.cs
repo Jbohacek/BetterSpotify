@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BetterSpotify.Migrations
 {
     /// <inheritdoc />
-    public partial class SongAdd : Migration
+    public partial class Inital : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -88,7 +88,7 @@ namespace BetterSpotify.Migrations
                 {
                     IdSong = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdAlbum = table.Column<int>(type: "int", nullable: false),
+                    IdAlbum = table.Column<int>(type: "int", nullable: true),
                     IdUser = table.Column<int>(type: "int", nullable: false),
                     Title = table.Column<string>(type: "Varchar(50)", nullable: false),
                     DiscNo = table.Column<int>(type: "Int", nullable: true),
@@ -104,8 +104,7 @@ namespace BetterSpotify.Migrations
                         name: "FK_TbSong_TbAlbum_IdAlbum",
                         column: x => x.IdAlbum,
                         principalTable: "TbAlbum",
-                        principalColumn: "IdAlbum",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdAlbum");
                     table.ForeignKey(
                         name: "FK_TbSong_tbUsers_IdUser",
                         column: x => x.IdUser,
