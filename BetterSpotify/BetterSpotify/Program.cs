@@ -1,4 +1,4 @@
-using BetterSpotify.Data;
+using BetterSpotify.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BetterSpotify

@@ -1,7 +1,7 @@
 ﻿using BetterSpotify.Models.Database;
 using Microsoft.EntityFrameworkCore;
 
-namespace BetterSpotify.Data
+namespace BetterSpotify.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {
