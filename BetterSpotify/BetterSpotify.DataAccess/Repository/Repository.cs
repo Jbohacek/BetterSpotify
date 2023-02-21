@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace BetterSpotify.DataAccess.Repository
 {
-    internal class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ApplicationDbContext Context;
         internal DbSet<T> DbSet { get; set; }
