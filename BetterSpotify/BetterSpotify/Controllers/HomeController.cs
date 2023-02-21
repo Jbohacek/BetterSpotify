@@ -1,4 +1,5 @@
-﻿using BetterSpotify.Models;
+﻿using BetterSpotify.DataAccess.Repository.IRepository;
+using BetterSpotify.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,11 +7,14 @@ namespace BetterSpotify.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IUnitOfWork _unitOfWork;
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork db)
         {
             _logger = logger;
+            _unitOfWork = db;
         }
 
         public IActionResult Index()

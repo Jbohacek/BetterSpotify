@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BetterSpotify.Models\BetterSpotify.Models.csproj" />
+    <ProjectReference Include="..\BetterSpotify.Utilities\BetterSpotify.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

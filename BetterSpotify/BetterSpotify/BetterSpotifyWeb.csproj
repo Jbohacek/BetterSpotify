@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BetterSpotify.DataAccess\BetterSpotify.DataAccess.csproj" />
     <ProjectReference Include="..\BetterSpotify.Models\BetterSpotify.Models.csproj" />
+    <ProjectReference Include="..\BetterSpotify.Utilities\BetterSpotify.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

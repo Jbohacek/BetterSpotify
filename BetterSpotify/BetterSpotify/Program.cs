@@ -1,4 +1,6 @@
 using BetterSpotify.DataAccess.Data;
+using BetterSpotify.DataAccess.Repository;
+using BetterSpotify.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace BetterSpotify
@@ -14,6 +16,7 @@ namespace BetterSpotify
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
                 builder.Configuration.GetConnectionString("AspifyConnetion")
                     ));
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
 

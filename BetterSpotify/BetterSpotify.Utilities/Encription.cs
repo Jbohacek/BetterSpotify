@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BetterSpotify.Models
 {
     public class Encription
     {
-        public static string Encript(string password)
+        public static string Encrypt(string password)
         {
+            if (string.IsNullOrEmpty(password)) return "";
             byte[] data = UTF8Encoding.UTF8.GetBytes(password);
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
@@ -24,8 +21,9 @@ namespace BetterSpotify.Models
             }
         }
 
-        public static string Decript(string EncriptedPassword)
+        public static string Decrypt(string EncriptedPassword)
         {
+            if (string.IsNullOrEmpty(EncriptedPassword)) return "";
             byte[] data = Convert.FromBase64String(EncriptedPassword);
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
@@ -37,6 +35,11 @@ namespace BetterSpotify.Models
                     return UTF8Encoding.UTF8.GetString(results);
                 }
             }
+        }
+
+        public static bool Compare(string encrypted, string nonEncrypted)
+        {
+            return encrypted.Equals(Encrypt(nonEncrypted));
         }
     }
 }
