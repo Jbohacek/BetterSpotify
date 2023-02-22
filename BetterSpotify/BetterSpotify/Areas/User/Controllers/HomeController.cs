@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace BetterSpotifyWeb.Controllers
 {
+    [Area("User")]
     public class HomeController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
