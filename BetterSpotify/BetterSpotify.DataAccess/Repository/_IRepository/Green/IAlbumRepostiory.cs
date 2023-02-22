@@ -1,6 +1,7 @@
-﻿using BetterSpotify.Models.Database;
+﻿using BetterSpotify.DataAccess.Repository._IRepository;
+using BetterSpotify.Models.Database;
 
-namespace BetterSpotify.DataAccess.Repository.IRepository.Green
+namespace BetterSpotify.DataAccess.Repository._IRepository.Green
 {
     public interface IAlbumRepository : IRepository<Album>
     {

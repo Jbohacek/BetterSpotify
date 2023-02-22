@@ -1,5 +1,5 @@
 ﻿using BetterSpotify.DataAccess.Data;
-using BetterSpotify.DataAccess.Repository.IRepository.Green;
+using BetterSpotify.DataAccess.Repository._IRepository.Green;
 using BetterSpotify.Models.Database;
 
 namespace BetterSpotify.DataAccess.Repository.Green
@@ -16,6 +16,12 @@ namespace BetterSpotify.DataAccess.Repository.Green
         public void Update(Album album)
         {
             _context.Update(album);
+        }
+
+        public new void Add(Album album)
+        {
+            album.DateOfPublish = DateTime.Now;
+            _context.Add(album);
         }
     }
 }

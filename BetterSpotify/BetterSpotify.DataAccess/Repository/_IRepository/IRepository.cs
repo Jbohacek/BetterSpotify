@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace BetterSpotify.DataAccess.Repository.IRepository
+namespace BetterSpotify.DataAccess.Repository._IRepository
 {
     public interface IRepository<T> where T : class
     {

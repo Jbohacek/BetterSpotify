@@ -1,9 +1,9 @@
 using BetterSpotify.DataAccess.Data;
 using BetterSpotify.DataAccess.Repository;
-using BetterSpotify.DataAccess.Repository.IRepository;
+using BetterSpotify.DataAccess.Repository._IRepository;
 using Microsoft.EntityFrameworkCore;
 
-namespace BetterSpotify
+namespace BetterSpotifyWeb
 {
     public class Program
     {

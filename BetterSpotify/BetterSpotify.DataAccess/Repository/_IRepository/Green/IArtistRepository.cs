@@ -1,5 +1,4 @@
-﻿using BetterSpotify.DataAccess.Repository.IRepository;
-using BetterSpotify.Models.Database;
+﻿using BetterSpotify.Models.Database;
 
 namespace BetterSpotify.DataAccess.Repository._IRepository.Green
 {

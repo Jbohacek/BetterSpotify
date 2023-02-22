@@ -20,8 +20,8 @@ namespace BetterSpotify.Models.Database
         public int? IdTokenWallet { get; set; }
         //Collections
 
-        public ICollection<Album> Albums { get; set; } = null!;
-        public ICollection<Song> Songs { get; set; } = null!;
+        public virtual ICollection<Album> Albums { get; set; } = null!;
+        public virtual ICollection<Song> Songs { get; set; } = null!;
 
         //Parameters
         [Column(TypeName = "Varchar(50)"), Required] public string FirstName { get; set; } = null!;

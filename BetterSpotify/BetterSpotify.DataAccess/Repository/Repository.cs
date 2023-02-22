@@ -1,5 +1,5 @@
 ﻿using BetterSpotify.DataAccess.Data;
-using BetterSpotify.DataAccess.Repository.IRepository;
+using BetterSpotify.DataAccess.Repository._IRepository;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 

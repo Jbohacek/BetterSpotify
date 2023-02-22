@@ -1,9 +1,9 @@
-﻿using BetterSpotify.DataAccess.Repository.IRepository;
+﻿using BetterSpotify.DataAccess.Repository._IRepository;
 using BetterSpotify.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace BetterSpotify.Controllers
+namespace BetterSpotifyWeb.Controllers
 {
     public class HomeController : Controller
     {
@@ -19,6 +19,11 @@ namespace BetterSpotify.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.CountSongs = _unitOfWork.Songs.GetAll().Count();
+            ViewBag.CountUsers = _unitOfWork.Users.GetAll().Count();
+            ViewBag.CountAlbums = _unitOfWork.Albums.GetAll().Count();
+            ViewBag.CountCategories = _unitOfWork.Category.GetAll().Count();
+            ViewBag.CountArtist = _unitOfWork.Artist.GetAll().Count();
             return View();
         }
 

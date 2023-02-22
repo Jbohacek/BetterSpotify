@@ -4,5 +4,15 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <hr/>
+    <div class="container">
+        <ul class="row justify-content-between text-start mt-2">
+            <p class="shadow rounded lead col-2">Počet Songs: @ViewBag.CountSongs</p>
+            <p class="shadow rounded lead col-2">Počet Albums: @ViewBag.CountAlbums</p>
+            <p class="shadow rounded lead col-2">Počet Users: @ViewBag.CountUsers</p>
+            <p class="shadow rounded lead col-2">Počet Artists: @ViewBag.CountArtist</p>
+            <p class="shadow rounded lead col-2">Počet Categories: @ViewBag.CountCategories</p>
+        </ul>
+    </div>
+    
 </div>

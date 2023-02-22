@@ -23,6 +23,6 @@ namespace BetterSpotify.Models.Database
 
         [Column(TypeName = "Date"), Required] public DateTime DateOfPublish { get; set; } = DateTime.Now;
 
-        public ICollection<Song> Songs { get; set; } = null!;
+        public virtual ICollection<Song> Songs { get; set; } = null!;
     }
 }

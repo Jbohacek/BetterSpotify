@@ -17,5 +17,11 @@ namespace BetterSpotify.DataAccess.Repository.Green
         {
             _context.TbSongs.Update(item);
         }
+
+        public new void Add(Song item)
+        {
+            item.DateOfRelease = DateTime.Now;
+            _context.TbSongs.Add(item);
+        }
     }
 }

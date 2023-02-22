@@ -1,4 +1,9 @@
-﻿namespace BetterSpotify.DataAccess.Repository.Green
+﻿using BetterSpotify.DataAccess.Data;
+using BetterSpotify.DataAccess.Repository._IRepository.Green;
+using BetterSpotify.Models;
+using BetterSpotify.Models.Database;
+
+namespace BetterSpotify.DataAccess.Repository.Green
 {
     internal class UserRepository : Repository<User>, IUserRepository
     {
