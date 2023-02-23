@@ -7,25 +7,67 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BetterSpotify.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BetterSpotify</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <img src="~/images/Website/Spotify.png" width="75px" class="d-sm-none d-lg-block " />
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse fs-1" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link active me-3" asp-area="User" asp-controller="Home" asp-action="Index">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item me-3">
+                            <a class="nav-link" href="#">Discover</a>
+                        </li>
+                        <li class="nav-item me-3 ">
+                            <a class="nav-link" href="#">Collections</a>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle fs-4 mt-3 " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+                            <div class="dropdown-menu bg-dark">
+                                <a class="dropdown-item fw-bold text-light" asp-area="Admin" asp-controller="Overview" asp-action="Index">Overview</a>
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">Separate actions</h6>
+                                <a class="dropdown-item text-light" href="#">User management</a>
+                                <a class="dropdown-item text-light" href="#">Song management</a>
+                                <a class="dropdown-item text-light" href="#">Verify Music</a>
+                            </div>
                         </li>
                     </ul>
+                    
+                </div>
+                <div>
+                    <a class="btn btn-outline-primary px-2 fs-4 me-4">Register</a>
+                    <button type="button" class="btn btn-primary fs-2 px-4 py-1" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                        Login
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg ">
+                            <div class="modal-content bla-Back">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                                    
+                                </div>
+                                <div class="modal-body">
+                                    <div> Login sem</div>
+                                </div>
+                                <div class="modal-footer">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -36,8 +78,8 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="border-top footer text-muted fixed-bottom bg-dark">
+        <div class="container ">
             &copy; 2023 - BetterSpotify - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

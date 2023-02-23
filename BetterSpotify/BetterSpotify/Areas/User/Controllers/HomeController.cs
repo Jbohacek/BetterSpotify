@@ -20,11 +20,7 @@ namespace BetterSpotifyWeb.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.CountSongs = _unitOfWork.Songs.GetAll().Count();
-            ViewBag.CountUsers = _unitOfWork.Users.GetAll().Count();
-            ViewBag.CountAlbums = _unitOfWork.Albums.GetAll().Count();
-            ViewBag.CountCategories = _unitOfWork.Category.GetAll().Count();
-            ViewBag.CountArtist = _unitOfWork.Artist.GetAll().Count();
+
             return View();
         }
 
