@@ -11,6 +11,9 @@
     <Content Remove="wwwroot\images\Website\Home\Earth.png" />
     <Content Remove="wwwroot\images\Website\Home\skyland.png" />
     <Content Remove="wwwroot\images\Website\Spotify.png" />
+    <Content Remove="wwwroot\music\musicfiles\Electronic\AWorldAway.mp3" />
+    <Content Remove="wwwroot\music\musicfiles\Pop\BEAUZMemories.mp3" />
+    <Content Remove="wwwroot\music\musicfiles\Rock\EvertideDissipate.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +49,23 @@
     <Resource Include="wwwroot\images\Website\Spotify.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="wwwroot\music\musicfiles\Electronic\AWorldAway.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="wwwroot\music\musicfiles\Pop\BEAUZMemories.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="wwwroot\music\musicfiles\Rock\EvertideDissipate.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\User\Views\Collection\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Areas\User\Views\Collection\Index.cshtml" />
   </ItemGroup>
 
 </Project>
