@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\images\Website\Home\Bloom.png" />
+    <Content Remove="wwwroot\images\Website\Home\Earth.png" />
+    <Content Remove="wwwroot\images\Website\Home\skyland.png" />
     <Content Remove="wwwroot\images\Website\Spotify.png" />
   </ItemGroup>
 
@@ -31,6 +34,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="wwwroot\images\Website\Home\Bloom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="wwwroot\images\Website\Home\Earth.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="wwwroot\images\Website\Home\skyland.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="wwwroot\images\Website\Spotify.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

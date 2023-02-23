@@ -2,9 +2,97 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <hr/>
+<link href="~/css/Home/HomeScreen.css" rel="stylesheet"/>
+
+
+<div class="Text-Inter container-fluid con-Main d-lg-flex d-none">
+    <div style="flex: 1 1 100px">
+        <div class="con-Text">
+            <div class="con-text-MainText">Everything</div>
+            <div class="con-text-MainText">Is Better</div>
+            <div class="con-text-MainText d-inline">
+                With
+                <div class="fw-bold d-inline Text-Music-Yellow"> Music</div>
+            </div>
+        </div>
+        <div class="con-text-Journey">
+            <div>Start your journey<a href="#pricing" class="btn btn-success con-btn">NOW</a></div>
+        </div>
+    </div>
+    <div style="width: 200px; flex: 1 1 90px; height: 400px">
+        <img class="img-earth shadow-lg" src="~/images/Website/Home/Earth.png" width="350px" height="350px" />
+        <img class="img-Bloom shadow-lg" src="~/images/Website/Home/Bloom.png" width="350px" height="350px" />
+        <img class="img-Sky shadow-lg" src="~/images/Website/Home/skyland.png" width="350px" height="350px" />
+    </div>
+</div>
+
+<div class="Text-Inter container-fluid con-Main d-inline d-lg-none">
+    <div class="con-Text-small">
+        <div class="con-text-MainText">Everything</div>
+        <div class="con-text-MainText">Is Better</div>
+        <div class="con-text-MainText d-inline">
+            With
+            <div class="fw-bold d-inline Text-Music-Yellow"> Music</div>
+        </div>
+    </div>
+    <div class="d-sm-flex d-none">
+        <img class="img-Sky-small shadow-lg" src="~/images/Website/Home/skyland.png" width="350px" height="350px" />
+        <img class="img-Bloom-small shadow-lg" src="~/images/Website/Home/Bloom.png" width="350px" height="350px" />
+    </div>
+</div>
+
+<div style="display: flex; align-items: center;justify-content: center">
+    <a href="#pricing" class="btnDown-Arrow"><i class="bi bi-arrow-down-circle" style="font-size: 80px"></i></a>
+</div>
     
 
+
+<div style="margin-top: 200px; margin-bottom: 100px" id="pricing">
+    <div>
+        <h1 class="display-1" style="text-align: center">Chose your plan</h1>
+    </div>
+    <div class="d-flex justify-content-around mt-5">
+        <div class="card shadow-lg border-1 border-success align-self-center" style="width: 18rem; height: 26rem; background-color: #222222">
+            <div class="card-body">
+                <h5 class="text-center display-4">Listener</h5>
+                <div class="text-center display-3 fw-bold" style="color: rgb(218, 165, 32)">1 200</div>
+                
+                <div class="lead text-center">for</div>
+                <div class="text-center display-5 fw-bold" style="color: green">2.99$</div>
+               
+                <div class="text-center" style="margin-top: 40px">
+                    <div class="lead text-muted text-center pb-2">per month</div>
+                    <a href="#" class="btn btn-outline-success w-75 fs-3">Buy now</a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow-lg border-1 border-warning" style="width: 22rem; height: 30rem; background-color: #222222">
+            <div class="card-body">
+                <h5 class="text-center display-4 fw-bolder">Musician</h5>
+                <div class="text-center display-3 fw-bold" style="color: rgb(218, 165, 32)">2 400</div>
+
+                <div class="lead text-center">for</div>
+                <div class="text-center display-5 fw-bold" style="color: green">4.99$</div>
+
+                <div class="text-center" style="margin-top: 100px">
+                    <div class="lead text-muted text-center pb-2">per month</div>
+                    <a href="#" class="btn btn-outline-warning w-75 fs-3">Buy now</a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow-lg border-1 border-primary align-self-center" style="width: 18rem; height: 26rem; background-color: #222222">
+            <div class="card-body">
+                <h5 class="text-center display-4">Expert</h5>
+                <div class="text-center display-3 fw-bold" style="color: rgb(218, 165, 32)">4 800</div>
+
+                <div class="lead text-center">for</div>
+                <div class="text-center display-5 fw-bold" style="color: green">6.99$</div>
+
+                <div class="text-center" style="margin-top: 40px">
+                    <div class="lead text-muted text-center pb-2">per month</div>
+                    <a href="#" class="btn btn-outline-primary w-75 fs-3">Buy now</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

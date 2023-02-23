@@ -1,0 +1,102 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+
+.Text-Inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.Text-Music-Yellow {
+    color: yellow;
+}
+
+.con-Text {
+    margin-left: 0px;
+    
+}
+.con-Text-small {
+    margin-left: 0px;
+}
+.con-text-MainText {
+    font-size: 103px;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+.con-text-Journey {
+    font-size: 60px;
+    font-weight: lighter;
+    margin: 20px 0 0 0;
+}
+
+.con-btn {
+    font-size: 60px;
+    font-weight: bold;
+    border-radius: 20px;
+    
+                   
+}
+
+.con-Main {
+    display: flex;
+}
+
+.img-earth {
+    position: relative;
+    width: 337.72px;
+    height: 327.94px;
+    left: 60px;
+    top: 30px;
+    background: url(image.png);
+    border-radius: 50px;
+    transform: rotate(-7.01deg);
+}
+.img-Bloom {
+    position: relative;
+    width: 363.42px;
+    height: 363.42px;
+    left: 180px;
+    top: -170px;
+    background: url(image.png);
+    border-radius: 50px;
+    transform: rotate(9.13deg);
+}
+.img-Sky {
+    display: inline-block;
+    position: relative;
+    width: 373.92px;
+    height: 373.92px;
+    left: 40px;
+    top: -350px;
+    background: url(image.png);
+    border-radius: 50px;
+    transform: rotate(-4.44deg);
+}
+.img-Sky-small {
+    display: inline-block;
+    position: relative;
+    width: 373.92px;
+    height: 373.92px;
+    left: 0px;
+    top: 0px;
+    background: url(image.png);
+    border-radius: 50px;
+    transform: rotate(-4.44deg);
+} 
+.img-Bloom-small {
+    position: relative;
+    width: 363.42px;
+    height: 363.42px;
+    left: -40px;
+    top: 0;
+    background: url(image.png);
+    border-radius: 50px;
+    transform: rotate(9.13deg);
+}
+.btnDown-Arrow {
+    cursor: pointer;
+    color: white;
+}
+.btnDown-Arrow:hover {
+    cursor: pointer;
+    color: green;
+}
