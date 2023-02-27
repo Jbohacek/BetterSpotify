@@ -27,6 +27,9 @@ namespace BetterSpotify.DataAccess.Repository
 
         public IEnumerable<T> GetAll()
         {
+            
+
+
             IQueryable<T> query = DbSet;
             return query.ToList();
         }
