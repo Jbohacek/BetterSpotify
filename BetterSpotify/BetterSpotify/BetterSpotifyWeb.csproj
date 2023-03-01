@@ -64,4 +64,8 @@
     <_ContentIncludedByDefault Remove="Areas\User\Views\Collection\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

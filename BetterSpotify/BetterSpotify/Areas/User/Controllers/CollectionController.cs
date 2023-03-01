@@ -15,20 +15,22 @@ namespace BetterSpotifyWeb.Areas.User.Controllers
 
         public IActionResult Index()
         {
-            //var listusers = _unitOfWork.Users.GetAll();
+            var listSongs = _unitOfWork.Songs.GetAll();
 
-            //var listcategory = _unitOfWork.Category.GetAll();
+            var listusers = _unitOfWork.Users.GetAll();
 
-            //foreach (var VARIABLE in listSongs)
-            //{
-            //    //VARIABLE.User = listusers.FirstOrDefault(x => VARIABLE.IdUser == x.IdUser);
-            //    //VARIABLE.Category = listcategory.FirstOrDefault(x => VARIABLE.IdCategory == x.IdCategory);
-            //}
+            var listcategory = _unitOfWork.Category.GetAll();
+
+            foreach (var VARIABLE in listSongs)
+            {
+                VARIABLE.User = listusers.FirstOrDefault(x => VARIABLE.IdUser == x.IdUser);
+                VARIABLE.Category = listcategory.FirstOrDefault(x => VARIABLE.IdCategory == x.IdCategory);
+            }
 
             //_unitOfWork.Save();
-            
 
-            var listSongs = _unitOfWork.Songs.GetAll();
+
+            
             return View(listSongs);
         }
     }

@@ -17,7 +17,6 @@ namespace BetterSpotifyWeb
                 builder.Configuration.GetConnectionString("AspifyConnetion")
                     ));
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

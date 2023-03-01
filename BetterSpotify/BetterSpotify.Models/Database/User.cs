@@ -31,7 +31,7 @@ namespace BetterSpotify.Models.Database
         [Column(TypeName = "Varchar(50)")] public string? Country { get; set; }
 
         [Column(TypeName = "Varchar(4)")] public string AddId { get; set; } = null!;
-        [Column(TypeName = "Date"), Required] public DateTime DateOfBirth { get; set; }
+        [Column(TypeName = "Date"), Required, DisplayName("Date of Birth")] public DateTime DateOfBirth { get; set; }
         [Column(TypeName = "Date"), Required] public DateTime DateOfRegistration { get; set; } = DateTime.Now;
 
 
