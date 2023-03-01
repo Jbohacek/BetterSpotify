@@ -2,3 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+function openLogIn() {
+    const url = 'https://localhost:7155/Login';
+    window.open(url);
+}

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BetterSpotify.Models.Database;
 using BetterSpotify.DataAccess.Data;
+using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 
 namespace BetterSpotifyWeb.Controllers
 {
@@ -13,15 +14,24 @@ namespace BetterSpotifyWeb.Controllers
             return View();
         }
 
-        public IActionResult Verify(User user)
+        // <form> <form action="/login" method="post">
+
+        [HttpGet("/login")]
+        public IActionResult Jakkoli()
+        {
+            return View("LogInPage");
+        }
+
+        [HttpPost("/login")]
+        public IActionResult Verify([FromForm] string email, [FromForm] string password)
         {
             var qery = from d in _dbContext.TbUsers
-                       where d.IdUserProfile == user.IdUserProfile && d.Password == user.Password
+                       where d.Email == email && d.Password == password
                        select d;
 
             if(qery.Count() > 0 )
             {
-                return View("LogIn");
+                return View("LogInPage");
             }
             else
             {
