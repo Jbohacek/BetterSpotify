@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace BetterSpotify.Models.Database
 {
@@ -32,7 +33,14 @@ namespace BetterSpotify.Models.Database
 
         [Column(TypeName = "Date")] public DateTime DateOfRelease { get; set; }
 
-
-
+        
+        public string ToScript()
+        {
+            var end = @"{name: " + Title + " ,";
+            end += "artist: '" + User.NickName+ "',";
+            end += "image: '" + ImageFile + "',";
+            end += "path: '" + SongFile + "' },";
+            return end;
+        }
     }
 }

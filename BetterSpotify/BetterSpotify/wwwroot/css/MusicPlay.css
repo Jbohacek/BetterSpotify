@@ -1,0 +1,48 @@
+﻿
+.Player {
+    padding: 15px;
+    margin: 0px auto 25px auto;
+    border-radius: 10px;
+    display: flex;
+    width: 70%;
+}
+
+.Player-Image {
+    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    align-self: center;
+           
+}
+
+.Player-Heading {
+    align-self: center;
+    padding: 10px;
+}
+
+.Player-Title {
+    font-weight: bold;
+    font-size: 36px;
+    height: 40px;
+               
+}
+
+.Player-Author {
+    font-size: 24px
+}
+.Player-Slider {
+   
+   
+}
+
+.Player-Slider-Time {
+    width: 100%;
+}
+
+.Player-Button {
+    font-size: 40px;
+    color: white;
+    padding: 0 10px;
+    height: 30px;
+
+}

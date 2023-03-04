@@ -1,9 +1,11 @@
-﻿@model IEnumerable<Song>
+﻿@using System.Text.Encodings.Web
+@model IEnumerable<Song>
 
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
+
 
 <h2>title</h2>
 
@@ -14,7 +16,7 @@
         <th scope="col">Song name</th>
         <th scope="col">Author</th>
         <th scope="col">Upload date</th>
-        <th scope="col">Upload date</th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -25,11 +27,12 @@
                 <td>@song.Title</td>
                 <td>@song.User.NickName</td>
                 <td>@song.DateOfRelease.ToShortDateString()</td>
-                <td>
+                @*<td>
                     <audio controls>
                         <source src="~/music/musicfiles/@song.SongFile" type="audio/mpeg"/>
                     </audio>
-                </td>
+                </td>*@
+                <td><div class="btn btn-primary" onclick="StartTrack((@song.IdSong),'@song.Title','@song.User.NickName','@song.SongFile')"> Play</div></td>
             </tr>
         }
     </tbody>
