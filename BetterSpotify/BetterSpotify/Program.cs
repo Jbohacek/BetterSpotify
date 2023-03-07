@@ -13,8 +13,18 @@ namespace BetterSpotifyWeb
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Local -  Lokální databaze, která je lokálnì.
+            //          Je potøeba spustit sql script na doplnìní testovacích dat
+            //          Bude fungovat vždy pokud je nainstalovaná "Ukládání a zpracování dat"
+
+
+            // AspifyConnetion - Databaze na internetu, která má data
+
+            var databaseName = "Local";
+
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-                builder.Configuration.GetConnectionString("AspifyConnetion")
+                builder.Configuration.GetConnectionString(databaseName)
                     ));
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             var app = builder.Build();
