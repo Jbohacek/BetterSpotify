@@ -1,16 +1,17 @@
 ﻿var TrackName = document.querySelector(".Player-Title");
 var TrackAuthor = document.querySelector(".Player-Author");
 
-let Image_Track = document.querySelector(".Player-Image");
-let curr_track = document.createElement('audio');
-let PausePlay = document.getElementById("PausePlay");
+var Image_Track = document.querySelector(".Player-Image");
+var curr_track = document.createElement('audio');
+var PausePlay = document.getElementById("PausePlay");
 
-let curr_time = document.querySelector(".Player-Slider-CurrentTime");
-let total_duration = document.querySelector(".Player-Slider-EndTime");
-let seek_slider = document.querySelector(".Player-Slider-Time");
+var curr_time = document.querySelector(".Player-Slider-CurrentTime");
+var total_duration = document.querySelector(".Player-Slider-EndTime");
+var seek_slider = document.querySelector(".Player-Slider-Time");
 
 var isPlaying = false;
-let updateTimer;
+var updateTimer;
+
 
 function StartTrack(IdSong, SongName, SongAuthor, SongFile) {
     console.log("Now Playing:");
@@ -84,7 +85,7 @@ function setVolume() {
 }
 
 function seekUpdate() {
-    let seekPosition = 0;
+    var seekPosition = 0;
 
     // Check if the current track duration is a legible number
     if (!isNaN(curr_track.duration)) {
@@ -92,10 +93,10 @@ function seekUpdate() {
         seek_slider.value = seekPosition;
 
         // Calculate the time left and the total duration
-        let currentMinutes = Math.floor(curr_track.currentTime / 60);
-        let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
-        let durationMinutes = Math.floor(curr_track.duration / 60);
-        let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+        var currentMinutes = Math.floor(curr_track.currentTime / 60);
+        var currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+        var durationMinutes = Math.floor(curr_track.duration / 60);
+        var durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
 
         // Add a zero to the single digit time values
         if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }

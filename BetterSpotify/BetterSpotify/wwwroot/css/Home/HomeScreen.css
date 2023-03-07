@@ -16,8 +16,15 @@
 .con-Text-small {
     margin-left: 0px;
 }
+
+
 .con-text-MainText {
     font-size: 103px;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+.con-text-MainText-Mobile {
+    font-size: 80px;
     margin: 0;
     letter-spacing: 0.05em;
 }

@@ -6,3 +6,11 @@ function openLogIn() {
     const url = 'https://localhost:7155/Login';
     window.open(url);
 }
+
+
+console.log(document.querySelector(".displayMusic"));
+
+if (document.querySelector('.displayMusic') != null) {
+    var player = document.querySelector('.Player');
+    player.classList.remove('d-none');
+}

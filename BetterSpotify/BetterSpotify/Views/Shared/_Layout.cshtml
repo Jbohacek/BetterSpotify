@@ -14,12 +14,15 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <img src="~/images/Website/Spotify.png" width="75px" class="d-sm-none d-lg-block me-4" />
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse fs-1" id="navbarColor02">
                     <ul class="navbar-nav me-auto">
+                        <a class="navbar-brand d-none d-lg-block" href="#">
+                            <img src="~/images/Website/Spotify.png" width="75px" class="me-4" />
+                        </a>
                         <li class="nav-item">
                             <a class="nav-link active me-3" asp-area="User" asp-controller="Home" asp-action="Index">Home
                                 <span class="visually-hidden">(current)</span>
@@ -44,16 +47,26 @@
                             </div>
                         </li>
                     </ul>
-                    
+
                 </div>
-                <div>
-                    <div class="me-5">
+                <div class="d-flex">
+                    
+                   @* Zobrazeni pro velke obrazovky*@
+                    <div class="d-xl-block d-none me-5">
                         <a class="btn btn-outline-info px-2 fs-4 me-4 fw-light">Register</a>
                         <button type="button" class="btn btn-info fs-2 px-4 py-1" data-bs-toggle="modal" data-bs-target="#LoginModal">
                             Log In
                         </button>
                     </div>
-                    
+
+                    @*Zobrazeni pro male*@
+                    <div class="d-md-block d-xl-none ">
+                        <a class="btn btn-outline-info px-2 fs-4 me-1 fw-light">Register</a>
+                        <button type="button" class="btn btn-info fs-2 px-4 py-1" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                            Log In
+                        </button>
+                    </div>
+
 
                     <!-- Modal -->
                     <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,8 +95,8 @@
     </main>
 </div>
 
-
-    <div class="fixed-bottom bg-danger Player">
+    
+    <div class="fixed-bottom Player d-none">
         <img src="~/images/Website/Home/Bloom.png" class="Player-Image" />
         <div class="Player-Heading">
             <div class="Player-Title lead text-wrap">Pain</div>

@@ -5,6 +5,7 @@
 <link href="~/css/Home/HomeScreen.css" rel="stylesheet"/>
 
 
+@*Large*@
 <div class="Text-Inter container-fluid con-Main d-lg-flex d-none">
     <div style="flex: 1 1 100px">
         <div class="con-Text">
@@ -26,11 +27,28 @@
     </div>
 </div>
 
-<div class="Text-Inter container-fluid con-Main d-inline d-lg-none">
+@*Small*@
+<div class="Text-Inter container-fluid con-Main d-sm-inline d-lg-none d-none">
     <div class="con-Text-small">
         <div class="con-text-MainText">Everything</div>
         <div class="con-text-MainText">Is Better</div>
         <div class="con-text-MainText d-inline">
+            With
+            <div class="fw-bold d-inline Text-Music-Yellow"> Music</div>
+        </div>
+    </div>
+    <div class="d-sm-flex d-none">
+        <img class="img-Sky-small shadow-lg" src="~/images/Website/Home/skyland.png" width="350px" height="350px" />
+        <img class="img-Bloom-small shadow-lg" src="~/images/Website/Home/Bloom.png" width="350px" height="350px" />
+    </div>
+</div>
+
+@*Mobile*@
+<div class="Text-Inter container-fluid con-Main d-inline d-sm-none">
+    <div class="con-Text-small">
+        <div class="con-text-MainText-Mobile">Everything</div>
+        <div class="con-text-MainText-Mobile">Is Better</div>
+        <div class="con-text-MainText-Mobile d-inline">
             With
             <div class="fw-bold d-inline Text-Music-Yellow"> Music</div>
         </div>
