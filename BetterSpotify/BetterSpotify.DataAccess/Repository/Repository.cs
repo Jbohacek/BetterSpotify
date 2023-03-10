@@ -13,24 +13,38 @@ namespace BetterSpotify.DataAccess.Repository
         public Repository(ApplicationDbContext dbContext)
         {
             Context = dbContext;
+
             this.DbSet = Context.Set<T>();
         }
 
 
-        public T GetFirstOrDefault(Expression<Func<T, bool>> filterExpression)
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filterExpression, string? include = null)
         {
             IQueryable<T> query = DbSet;
+            if (include != null)
+            {
+                foreach (var inc in include.Split(',', StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(inc);
+                }
+            }
+
             query = query.Where(filterExpression);
 
             return query.First();
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(string? include = null)
         {
-            
-
-
             IQueryable<T> query = DbSet;
+            if (include != null)
+            {
+                foreach (var inc in include.Split(',', StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(inc);
+                }
+            }
+
             return query.ToList();
         }
 
