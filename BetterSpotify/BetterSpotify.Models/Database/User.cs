@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace BetterSpotify.Models.Database
 {
@@ -32,7 +33,9 @@ namespace BetterSpotify.Models.Database
 
         [Column(TypeName = "Varchar(4)")] public string AddId { get; set; } = null!;
         [Column(TypeName = "Date"), Required, DisplayName("Date of Birth")] public DateTime DateOfBirth { get; set; }
+        [IgnoreDataMember] public string GetDateOfBirth => DateOfBirth.ToShortDateString();
         [Column(TypeName = "Date"), Required] public DateTime DateOfRegistration { get; set; } = DateTime.Now;
+        [IgnoreDataMember] public string GetDateOfRegistration => DateOfRegistration.ToShortDateString();
 
 
         // Encrypt 

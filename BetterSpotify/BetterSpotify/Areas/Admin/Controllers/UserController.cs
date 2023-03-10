@@ -24,5 +24,16 @@ namespace BetterSpotifyWeb.Areas.Admin.Controllers
             _unitOfWork.Save();
             return View();
         }
+
+        #region ApiTable
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var list = _unitOfWork.Users.GetAll();
+            return Json(new{data = list});
+        }
+
+        #endregion
     }
 }
