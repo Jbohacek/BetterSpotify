@@ -4,7 +4,7 @@
 }
 
 <h6 class="display-1 mb-3">Overview</h6>
-<p class="lead text-success ms-3">Databáze: OK</p>
+<p class="lead ms-3" style="color: @ViewBag.ColorDataConnected">Database connection: @ViewBag.DataConnected</p>
 <hr/>
 
 <ul class="d-flex justify-content-between text-start mt-2">
@@ -12,40 +12,40 @@
     <div class="shadow-lg rounded lead col-lg-2 m-1 p-3" style="background-color: #222222; width: 250px">
         <h3 class="display-6 fw-bolder ">Songs</h3>
         <hr/>
-        <p class="lead">Počet Songs: @ViewBag.CountSongs</p>
-        <a class="btn bg-light text-end">Zobrazit</a>
+        <p class="lead">Number of Songs: @ViewBag.CountSongs</p>
+        <a class="btn bg-light text-end">Show</a>
     </div>
 
     <div class="shadow rounded lead col-lg-2 m-1 p-3" style="background-color: #222222; width: 250px">
         <h3 class="display-6 fw-bolder ">Albums</h3>
         <hr/>
-        <p class="lead">Počet Albums: @ViewBag.CountAlbums</p>
-        <a class="btn bg-light text-end">Zobrazit</a>
+        <p class="lead">Number of Albums: @ViewBag.CountAlbums</p>
+        <a class="btn bg-light text-end">Show</a>
     </div>
 
     <div class="shadow rounded lead col-lg-2 m-1 p-3" style="background-color: #222222; width: 250px">
         <h3 class="display-6 fw-bolder">Users</h3>
         <hr/>
-        <p class="lead">Počet Users: @ViewBag.CountUsers</p>
-        <a class="btn bg-light text-end" asp-controller="User" asp-action="Index" asp-route-id="0">Zobrazit</a>
+        <p class="lead">Number of Users: @ViewBag.CountUsers</p>
+        <a class="btn bg-light text-end" asp-controller="User" asp-action="Index" asp-route-id="0">Show</a>
     </div>
 
     <div class="shadow rounded lead col-lg-2 m-1 p-3" style="background-color: #222222; width: 250px">
         <h3 class="display-6 fw-bolder ">Artists</h3>
         <hr/>
-        <p class="lead">Počet Artists: @ViewBag.CountArtist</p>
-        <a class="btn bg-light text-end">Zobrazit</a>
+        <p class="lead">Number of Artists: @ViewBag.CountArtist</p>
+        <a class="btn bg-light text-end">Show</a>
     </div>
 
     <div class="shadow rounded lead col-lg-2 m-1 p-3" style="background-color: #222222; width: 250px">
         <h3 class="display-6 fw-bolder ">Categories</h3>
         <hr/>
-        <p class="lead">Počet Categories: @ViewBag.CountCategories</p>
-        <a class="btn bg-light text-end">Zobrazit</a>
+        <p class="lead">Number of Categories: @ViewBag.CountCategories</p>
+        <a class="btn bg-light text-end">Show</a>
     </div>
-    @*        <p class="shadow rounded lead col-2 bg-info">Počet Songs: @ViewBag.CountSongs</p>
-        <p class="shadow rounded lead col-2 bg-info">Počet Albums: @ViewBag.CountAlbums</p>
-        <p class="shadow rounded lead col-2 bg-info">Počet Users: @ViewBag.CountUsers</p>
-        <p class="shadow rounded lead col-2 bg-info">Počet Artists: @ViewBag.CountArtist</p>
-        <p class="shadow rounded lead col-2 bg-info">Počet Categories: @ViewBag.CountCategories</p>*@
+    @*        <p class="shadow rounded lead col-2 bg-info">Number of Songs: @ViewBag.CountSongs</p>
+        <p class="shadow rounded lead col-2 bg-info">Number of Albums: @ViewBag.CountAlbums</p>
+        <p class="shadow rounded lead col-2 bg-info">Number of Users: @ViewBag.CountUsers</p>
+        <p class="shadow rounded lead col-2 bg-info">Number of Artists: @ViewBag.CountArtist</p>
+        <p class="shadow rounded lead col-2 bg-info">Number of Categories: @ViewBag.CountCategories</p>*@
 </ul>

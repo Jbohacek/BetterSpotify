@@ -14,14 +14,6 @@ namespace BetterSpotifyWeb.Areas.Admin.Controllers
         }
         public IActionResult Index(int? id)
         {
-            var listusers = _unitOfWork.Users.GetAll();
-            var listsong = _unitOfWork.Songs.GetAll();
-
-            foreach (var VARIABLE in listsong)
-            {
-                listusers.Last().Songs.Add(VARIABLE);
-            }
-            _unitOfWork.Save();
             return View();
         }
 

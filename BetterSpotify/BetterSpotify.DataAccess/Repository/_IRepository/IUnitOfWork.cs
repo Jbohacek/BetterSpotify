@@ -9,6 +9,7 @@ namespace BetterSpotify.DataAccess.Repository._IRepository
         IArtistRepository Artist { get; }
         ISongRepository Songs { get; }
         ICategoryRepository Category { get; }
+        bool DataBaseConnected { get; }
         void Save();
     }
 }

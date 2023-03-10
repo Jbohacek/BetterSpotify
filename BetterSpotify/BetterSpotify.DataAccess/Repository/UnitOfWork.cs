@@ -15,6 +15,8 @@ namespace BetterSpotify.DataAccess.Repository
         public ISongRepository Songs { get; private set; }
         public ICategoryRepository Category { get; private set; }
 
+        public bool DataBaseConnected { get; private set; }
+
         public UnitOfWork(ApplicationDbContext db)
         {
             _context = db;
@@ -23,6 +25,10 @@ namespace BetterSpotify.DataAccess.Repository
             Artist = new ArtistRepository(_context);
             Songs = new SongRepository(_context);
             Category = new CategoryRepository(_context);
+
+
+            DataBaseConnected = db.Database.CanConnect();
+
         }
 
 

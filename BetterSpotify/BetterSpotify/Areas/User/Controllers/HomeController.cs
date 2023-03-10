@@ -8,14 +8,14 @@ namespace BetterSpotifyWeb.Controllers
     [Area("User")]
     public class HomeController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, IUnitOfWork db)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _unitOfWork = db;
+           
         }
 
         public IActionResult Index()

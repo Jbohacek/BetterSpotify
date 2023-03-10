@@ -15,13 +15,27 @@ namespace BetterSpotifyWeb.Areas.Admin.Controllers
             _unitOfWork = work;
         }
 
+
         public IActionResult Index()
         {
-            ViewBag.CountSongs = _unitOfWork.Songs.GetAll().Count();
-            ViewBag.CountUsers = _unitOfWork.Users.GetAll().Count();
-            ViewBag.CountAlbums = _unitOfWork.Albums.GetAll().Count();
-            ViewBag.CountCategories = _unitOfWork.Category.GetAll().Count();
-            ViewBag.CountArtist = _unitOfWork.Artist.GetAll().Count();
+
+            if (_unitOfWork.DataBaseConnected)
+            {
+                ViewBag.CountSongs = _unitOfWork.Songs.GetAll().Count();
+                ViewBag.CountUsers = _unitOfWork.Users.GetAll().Count();
+                ViewBag.CountAlbums = _unitOfWork.Albums.GetAll().Count();
+                ViewBag.CountCategories = _unitOfWork.Category.GetAll().Count();
+                ViewBag.CountArtist = _unitOfWork.Artist.GetAll().Count();
+                ViewBag.DataConnected = "Valid";
+                ViewBag.ColorDataConnected = "green";
+            }
+            else
+            {
+                ViewBag.DataConnected = "Invalid";
+                ViewBag.ColorDataConnected = "red";
+            }
+
+            
             return View();
         }
     }
