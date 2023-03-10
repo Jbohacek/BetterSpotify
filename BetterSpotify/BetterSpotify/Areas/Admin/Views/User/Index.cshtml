@@ -3,32 +3,38 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<style>
+    * {
+        color: white;
+    }
+    option {
+        color: black;
+    }
 
-<table class="table table-dark">
+    </style>
+
+<h1 class="display-2 mt-3">List of users</h1>
+<p class="lead mb-5 ms-3">AC - Active account<br/>V - Verified account</p>
+
+<table id="tblData" class="table shadow-lg" style="color: white">
     <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Song name</th>
-        <th scope="col">Author</th>
-        <th scope="col">Upload date</th>
-        <th scope="col">Upload date</th>
-    </tr>
-    </thead>
-    <tbody>
-@*    @foreach (var song in Model)
-    {
-        <tr scope="row">
-            <td>@song.IdSong</td>
-            <td>@song.Title</td>
-            <td>@song.User.NickName</td>
-            <td>@song.DateOfRelease.ToShortDateString()</td>
-            <td>
-                <audio controls>
-                    <source src="~/music/musicfiles/@song.SongFile" type="audio/mpeg"/>
-                </audio>
-            </td>
+        <tr>
+            <th>#</th>
+            <th>NickName</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>email</th>
+            <th>country</th>
+            <th>Date of Birth</th>
+            <th>Date of registration</th>
+            <th>AC</th>
+            <th>V</th>
         </tr>
-    }*@
-    </tbody>
+    </thead>
+    <tbody style="color: white"></tbody>
 </table>
+
+@section Scripts
+{ 
+    <script src="~/js/TableView/user.js"></script>
+}

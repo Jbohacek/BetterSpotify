@@ -22,6 +22,9 @@ body {
 .bla-text {
     color: #1e1e1e;
 }
+.white-text {
+    color: white;
+}
 
 .bla-Back {
     background-color: #1E1E1E;

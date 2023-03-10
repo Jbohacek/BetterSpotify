@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/MusicPlay.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BetterSpotify.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" />
 </head>
 <body>
     <header>
@@ -41,7 +42,7 @@
                                 <a class="dropdown-item fw-bold text-light dropneco" asp-area="Admin" asp-controller="Overview" asp-action="Index">Overview</a>
                                 <div class="dropdown-divider"></div>
                                 <h6 class="dropdown-header">Separate actions</h6>
-                                <a class="dropdown-item text-light dropneco" href="#">User management</a>
+                                <a class="dropdown-item text-light dropneco" asp-area="Admin" asp-controller="User" asp-action="Index">User management</a>
                                 <a class="dropdown-item text-light dropneco" href="#">Song management</a>
                                 <a class="dropdown-item text-light dropneco" href="#">Verify Music</a>
                             </div>
@@ -130,6 +131,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="//cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
