@@ -26,6 +26,6 @@ namespace BetterSpotify.Models.Database
 
         [Column(TypeName = "Varchar(100)"), Required]
         public string ImageFile { get; set; } = null!;
-        [Column(TypeName = "Varchar(200)")] public string? WikiLink { get; set; }
+        [Column(TypeName = "Varchar(500)")] public string? WikiLink { get; set; }
     }
 }

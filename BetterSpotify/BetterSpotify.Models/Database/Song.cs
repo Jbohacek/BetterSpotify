@@ -28,8 +28,8 @@ namespace BetterSpotify.Models.Database
         [Column(TypeName = "Int")] public int? DiscNo { get; set; }     // vůbec nevim co znamená: na kolikátem disku se písnička nachází 
         [Column(TypeName = "Int")] public int? TrackNo { get; set; }
         [Column(TypeName = "Int")] public int Duration { get; set; }
-        [Column(TypeName = "Varchar(50)")] public string ImageFile { get; set; } = "Resources/Image/DefaultAlbumPic";
-        [Column(TypeName = "Varchar(50)")] public string SongFile { get; set; } = null!;
+        [Column(TypeName = "Varchar(500)")] public string ImageFile { get; set; } = "Resources/Image/DefaultAlbumPic";
+        [Column(TypeName = "Varchar(500)")] public string SongFile { get; set; } = null!;
 
         [Column(TypeName = "Date")] public DateTime DateOfRelease { get; set; }
 
