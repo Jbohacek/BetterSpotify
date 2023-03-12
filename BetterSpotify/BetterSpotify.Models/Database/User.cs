@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace BetterSpotify.Models.Database
 {
@@ -21,8 +22,8 @@ namespace BetterSpotify.Models.Database
         public int? IdTokenWallet { get; set; }
         //Collections
 
-        public virtual ICollection<Album> Albums { get; set; } = null!;
-        public virtual ICollection<Song> Songs { get; set; } = null!;
+        [ValidateNever] public virtual ICollection<Album> Albums { get; set; } = null!;
+        [ValidateNever]public virtual ICollection<Song> Songs { get; set; } = null!;
 
         //Parameters
         [Column(TypeName = "Varchar(50)"), Required] public string FirstName { get; set; } = null!;
@@ -31,7 +32,7 @@ namespace BetterSpotify.Models.Database
         [Column(TypeName = "Varchar(50)"), Required] public string Email { get; set; } = null!;
         [Column(TypeName = "Varchar(50)")] public string? Country { get; set; }
 
-        [Column(TypeName = "Varchar(4)")] public string AddId { get; set; } = null!;
+        [Column(TypeName = "Varchar(4)"), ValidateNever] public string AddId { get; set; } = null!;
         [Column(TypeName = "Date"), Required, DisplayName("Date of Birth")] public DateTime DateOfBirth { get; set; }
         [IgnoreDataMember] public string GetDateOfBirth => DateOfBirth.ToShortDateString();
         [Column(TypeName = "Date"), Required] public DateTime DateOfRegistration { get; set; } = DateTime.Now;
@@ -42,10 +43,10 @@ namespace BetterSpotify.Models.Database
         [PasswordPropertyText, Column(TypeName = "Varchar(100)"), Required] public string Password { get; set; } = null!;
 
 
-        [Column(TypeName = "Bit"), Required, DisplayName("Active account")] public bool ActiveAccount { get; set; } = false;
-        [Column(TypeName = "Bit")] public bool Verified { get; set; } = false;
+        [Column(TypeName = "Bit"), Required, DisplayName("Active account"), ValidateNever] public bool ActiveAccount { get; set; }
+        [Column(TypeName = "Bit"), ValidateNever] public bool Verified { get; set; }
 
-        [Column(TypeName = "Varchar(50)")] public string ImageFile { get; set; } = "Resources/Image/DefaultUserPic";
+        [Column(TypeName = "Varchar(500)"), DisplayName("Image File")] public string ImageFile { get; set; } = "Resources/Image/DefaultUserPic";
 
     }
 }

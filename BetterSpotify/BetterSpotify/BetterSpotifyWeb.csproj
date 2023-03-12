@@ -67,6 +67,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\images\ProfilePics\" />
   </ItemGroup>
 
 </Project>

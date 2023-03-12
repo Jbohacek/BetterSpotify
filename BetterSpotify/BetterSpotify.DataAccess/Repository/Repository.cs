@@ -17,7 +17,7 @@ namespace BetterSpotify.DataAccess.Repository
             this.DbSet = Context.Set<T>();
         }
 
-
+        // Artist,category
         public T GetFirstOrDefault(Expression<Func<T, bool>> filterExpression, string? include = null)
         {
             IQueryable<T> query = DbSet;

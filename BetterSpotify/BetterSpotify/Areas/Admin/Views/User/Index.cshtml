@@ -15,8 +15,11 @@
     
 
 <h1 class="display-2 mt-3">List of users</h1>
-<p class="lead mb-5 ms-3">AC - Active account<br/>V - Verified account</p>
-<a class="btn btn-primary" asp-action="Upsert">ADD user</a>
+<p class="lead ms-3">AC - Active account<br/>V - Verified account</p>
+<div class="text-end mb-5">
+    <a class="btn btn-primary fs-3 p-2" asp-action="Upsert"><i class="bi bi-plus-square"></i> Add user</a>
+</div>
+
 
 <table id="tblData" class="table shadow-lg" style="color: white">
     <thead>

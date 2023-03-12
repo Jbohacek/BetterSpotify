@@ -65,31 +65,37 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="mb-3 pt-2">
+                    <div class="">
                         <input asp-for="ImageFile" name="File" type="file" class="form-control">
+                        <label asp-for="ImageFile"></label>
                         <span asp-validation-for="ImageFile"></span>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="mx-2 card p-3 shadow" style="background-color: #151515">
+        <div class="mx-2 card p-3 shadow mb-3" style="background-color: #151515">
             <div class="display-6 mb-3">System Information</div>
             <div class="row w-25 ms-3">
                 <div class="col">
                     <div class="form-check mb-3">
-                        <input asp-for="Verified" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input asp-for="Verified" class="form-check-input" type="checkbox" value="False" id="flexCheckDefault">
                         <label asp-for="Verified" class="form-check-label" for="flexCheckDefault"></label>
                     </div >
                 </div>
                 <div class="col">
                     <div class="form-check mb-3">
-                        <input asp-for="ActiveAccount" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input asp-for="ActiveAccount" class="form-check-input" type="checkbox" value="True" id="flexCheckDefault">
                         <label asp-for="ActiveAccount" class="form-check-label" for="flexCheckDefault"></label>
                     </div >
                 </div>
             </div>
             
         </div>
+        <div class="d-flex justify-content-between mx-5 ">
+            <button class="btn btn-info fs-3" asp-action="Index">Back</button>
+            <button class="btn btn-primary fs-3" type="submit">Send</button>
+        </div>
+        
     </div>
 </form>
