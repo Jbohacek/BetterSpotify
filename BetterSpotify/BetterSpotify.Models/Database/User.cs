@@ -42,7 +42,7 @@ namespace BetterSpotify.Models.Database
         [PasswordPropertyText, Column(TypeName = "Varchar(100)"), Required] public string Password { get; set; } = null!;
 
 
-        [Column(TypeName = "Bit"), Required] public bool ActiveAccount { get; set; } = false;
+        [Column(TypeName = "Bit"), Required, DisplayName("Active account")] public bool ActiveAccount { get; set; } = false;
         [Column(TypeName = "Bit")] public bool Verified { get; set; } = false;
 
         [Column(TypeName = "Varchar(50)")] public string ImageFile { get; set; } = "Resources/Image/DefaultUserPic";
