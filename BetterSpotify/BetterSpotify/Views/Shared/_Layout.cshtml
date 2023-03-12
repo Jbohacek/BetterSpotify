@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -15,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -51,8 +52,8 @@
 
                 </div>
                 <div class="d-flex">
-                    
-                   @* Zobrazeni pro velke obrazovky*@
+
+                    @* Zobrazeni pro velke obrazovky*@
                     <div class="d-xl-block d-none me-5">
                         <a class="btn btn-outline-info px-2 fs-4 me-4 fw-light">Register</a>
                         <button type="button" class="btn btn-info fs-2 px-4 py-1" data-bs-toggle="modal" data-bs-target="#LoginModal">
@@ -67,9 +68,17 @@
                             Log In
                         </button>
                     </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<div class="container">
+    <main role="main" class="pb-3">
+            @RenderBody()
+    </main>
+</div>
 
 
-<<<<<<< HEAD
     <div class="fixed-bottom Player d-none">
         <img src="~/images/Website/Home/Bloom.png" class="Player-Image" />
         <div class="Player-Heading">
@@ -106,24 +115,57 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-=======
-                    <!-- Modal -->
-                    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg ">
-                            <div class="modal-content bla-Back">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
 
-                                </div>
-                                <div class="modal-body">
-                                    <a class="btn btn-primary" asp-area="User" asp-controller="Login" asp-action="Index">Klikni sem pro login</a>
-                                </div>
-                                <div class="modal-footer">
->>>>>>> be6e8103d8b99a325189de80378f08b6ca28d3da
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse fs-1" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <a class="navbar-brand d-none d-lg-block" href="#">
+                            <img src="~/images/Website/Spotify.png" width="75px" class="me-4" />
+                        </a>
+                        <li class="nav-item">
+                            <a class="nav-link active me-3" asp-area="User" asp-controller="Home" asp-action="Index">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link" href="#">Discover</a>
+                        </li>
+                        <li class="nav-item me-3 ">
+                            <a class="nav-link" asp-area="User" asp-controller="Collection" asp-action="Index">Collections</a>
+                        </li>
 
-                                </div>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle fs-4 mt-3 " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+                            <div class="dropdown-menu bla-Back border-light fs-5">
+                                <a class="dropdown-item fw-bold text-light dropneco" asp-area="Admin" asp-controller="Overview" asp-action="Index">Overview</a>
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">Separate actions</h6>
+                                <a class="dropdown-item text-light dropneco" asp-area="Admin" asp-controller="User" asp-action="Index">User management</a>
+                                <a class="dropdown-item text-light dropneco" href="#">Song management</a>
+                                <a class="dropdown-item text-light dropneco" href="#">Verify Music</a>
                             </div>
-                        </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="d-flex">
+
+                                    @* Zobrazeni pro velke obrazovky*@
+                    <div class="d-xl-block d-none me-5">
+                        <a class="btn btn-outline-info px-2 fs-4 me-4 fw-light">Register</a>
+                        <button type="button" class="btn btn-info fs-2 px-4 py-1" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                            Log In
+                        </button>
+                    </div>
+
+                                    @*Zobrazeni pro male*@
+                    <div class="d-md-block d-xl-none ">
+                        <a class="btn btn-outline-info px-2 fs-4 me-1 fw-light">Register</a>
+                        <button type="button" class="btn btn-info fs-2 px-4 py-1" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                            Log In
+                        </button>
                     </div>
                 </div>
             </div>
@@ -131,11 +173,11 @@
     </header>
 <div class="container">
     <main role="main" class="pb-3">
-        @RenderBody()
+                            @RenderBody()
     </main>
 </div>
 
-    
+
     <div class="fixed-bottom Player d-none">
         <img src="~/images/Website/Home/Bloom.png" class="Player-Image" />
         <div class="Player-Heading">
@@ -155,13 +197,13 @@
                 <a href="#" class="Player-Button d-none"><i class="bi bi-caret-left"></i></a>
                 <a href="#" class="Player-Button" id="PausePlay" onclick="playpauseTrack()"><i class="bi bi-play"></i></a>
                 <a href="#" class="Player-Button d-none"><i class="bi bi-caret-right"></i></a>
-                
+
             </div>
         </div>
-        
+
     </div>
 
-@*    <footer class="border-top footer text-muted fixed-bottom bg-dark">
+                    @*    <footer class="border-top footer text-muted fixed-bottom bg-dark">
         <div class="container ">
             &copy; 2023 - BetterSpotify - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
@@ -171,10 +213,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="//cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+                    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-<<<<<<< HEAD
                     <!-- Modal -->
                     <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg ">
@@ -184,7 +225,7 @@
 
                                 </div>
                                 <div class="modal-body">
-                                             <form>
+                                                                                    <form>
                                                   <!-- Email input -->
                                                   <div class="form-outline mb-4" id="LoginModal">
                                                     <input type="email" id="inputemail" class="form-control" />
@@ -217,7 +258,7 @@
                                                   <div style="text-align: center;"><button type="button" class="btn btn-primary btn-block mb-4">Sign in</button></div>
 
 
-                                              </form>
+                                                </form>
                                 </div>
                                 <div class="modal-footer">
 
@@ -225,5 +266,3 @@
                             </div>
                         </div>
                     </div>
-=======
->>>>>>> be6e8103d8b99a325189de80378f08b6ca28d3da
