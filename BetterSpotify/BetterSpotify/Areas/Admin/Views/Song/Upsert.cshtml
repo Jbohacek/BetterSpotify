@@ -1,0 +1,112 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Song
+@{
+    ViewData["Title"] = "Upsert";
+}
+
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+    <div>
+        <div>
+            <h2 class="display-3">User Edit</h2>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mx-2 card p-3 shadow mb-4" style="background-color: #151515">
+            <div class="display-6 mb-3">Personal Information</div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input asp-for="IdSong" type="text" class="form-control" id="floatingInput" placeholder=" ">
+                        <label asp-for="IdSong" for="floatingInput" class="bla-text">First name</label>
+                        <span asp-validation-for="IdSong"></span>
+                    </div >
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input asp-for="IdAlbum" type="text" class="form-control" id="floatingInput" placeholder=" ">
+                        <label asp-for="IdAlbum" for="floatingInput" class="bla-text">Last name</label>
+                        <span asp-validation-for="IdAlbum"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input asp-for="IdUser" type="date" class="form-control" id="floatingInput" placeholder=" ">
+                        <label asp-for="IdUser" for="floatingInput" class="bla-text">Date of Birth</label>
+                        <span asp-validation-for="IdUser"></span>
+                    </div >
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input asp-for="IdCategory" type="text" class="form-control" id="floatingInput" placeholder=" ">
+                        <label asp-for="IdCategory" for="floatingInput" class="bla-text">Country</label>
+                        <span asp-validation-for="IdCategory"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Title" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label asp-for="Title" for="floatingInput" class="bla-text">Email address</label>
+                <span asp-validation-for="Title"></span>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input asp-for="DiscNo" type="text" class="form-control" id="floatingInput" placeholder=" ">
+                        <label asp-for="DiscNo" for="floatingInput" class="bla-text">Nickname</label>
+                        <span asp-validation-for="DiscNo"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input asp-for="TrackNo" type="text" class="form-control" id="floatingInput" placeholder=" ">
+                        <label asp-for="TrackNo" for="floatingInput" class="bla-text">Password</label>
+                        <span asp-validation-for="TrackNo"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="">
+                        <input asp-for="Duration" name="File" type="file" class="form-control">
+                        <label asp-for="Duration"></label>
+                        <span asp-validation-for="Duration"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-2 card p-3 shadow mb-3" style="background-color: #151515">
+            <div class="display-6 mb-3">System Information</div>
+            <div class="row w-25 ms-3">
+                <div class="col">
+                    <div class="form-check mb-3">
+                        <input asp-for="ImageFile" class="form-check-input" type="checkbox" value="False" id="flexCheckDefault">
+                        <label asp-for="ImageFile" class="form-check-label" for="flexCheckDefault"></label>
+                    </div >
+                </div>
+                <div class="col">
+                    <div class="form-check mb-3">
+                        <input asp-for="SongFile" class="form-check-input" type="checkbox" value="True" id="flexCheckDefault">
+                        <label asp-for="SongFile" class="form-check-label" for="flexCheckDefault"></label>
+                    </div >
+                </div>
+                   <div class="col">
+                    <div class="form-check mb-3">
+                        <input asp-for="DateOfRelease" class="form-check-input" type="checkbox" value="True" id="flexCheckDefault">
+                        <label asp-for="DateOfRelease" class="form-check-label" for="flexCheckDefault"></label>
+                    </div >
+                </div>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-between mx-5 ">
+            <button class="btn btn-info fs-3" asp-action="Index">Back</button>
+            <button class="btn btn-primary fs-3" type="submit">Send</button>
+        </div>
+
+    </div>
+</form>
