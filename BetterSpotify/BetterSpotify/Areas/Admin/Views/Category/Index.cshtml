@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    * {
+        color: white;
+    }
+    option {
+        color: black;
+    }
+
+</style>
+    
+<a asp-controller="Overview" asp-action="Index" class="btn btn-info">Back</a>
+<h1 class="display-2 mt-3 mb-5">List of category</h1>
+@*<div class="text-end mb-5">
+    <a class="btn btn-primary fs-3 p-2" asp-action="Upsert"><i class="bi bi-plus-square"></i> </a>
+</div>
+*@
+
+<table id="tblData" class="table shadow-lg" style="color: white">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>ColorHex</th>
+        <th>ImageFile</th>
+    </tr>
+    </thead>
+    <tbody style="color: white"></tbody>
+</table>
+
+@section Scripts
+{ 
+    <script src="~/js/TableView/Category.js"></script>
+}
