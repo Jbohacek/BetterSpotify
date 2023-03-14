@@ -20,7 +20,8 @@
         <h3 class="display-6 fw-bolder ">Albums</h3>
         <hr/>
         <p class="lead">Number of Albums: @ViewBag.CountAlbums</p>
-        <a class="btn bg-light text-end">Show</a>
+        <a class="btn bg-light text-end" asp-area="Admin" asp-action="Index" asp-controller="Album">Show</a>
+        
     </div>
 
     <div class="shadow rounded lead col-lg-2 m-1 p-3" style="background-color: #222222; width: 250px">

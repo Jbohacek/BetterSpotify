@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace BetterSpotify.Models.Database
 {
@@ -22,6 +23,7 @@ namespace BetterSpotify.Models.Database
         [Column(TypeName = "Varchar(500)")] public string ImageFile { get; set; } = "Resources/Image/DefaultAlbumPic";
 
         [Column(TypeName = "Date"), Required] public DateTime DateOfPublish { get; set; } = DateTime.Now;
+        [IgnoreDataMember] public string GetDateOfPublish { get { return DateOfPublish.ToShortDateString(); } }
 
         public virtual ICollection<Song> Songs { get; set; } = null!;
     }

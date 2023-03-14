@@ -15,7 +15,7 @@ function loadDataTable()
         },
             "columns": [
                 { "data": "idSong", "width": "1%" },
-                { "data": "idAlbum", "width": "25%" },
+                { "data": "idAlbum", "width": "25-%" },
                 { "data": "idUser", "width": "15%" },
                 { "data": "idCategory", "width": "15%" },
                 { "data": "title", "width": "25%" },
