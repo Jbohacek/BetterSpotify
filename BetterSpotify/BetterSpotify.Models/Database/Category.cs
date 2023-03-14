@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BetterSpotify.Models.Database
@@ -11,6 +12,6 @@ namespace BetterSpotify.Models.Database
         [Column(TypeName = "Varchar(6)")] public string ColorHex { get; set; } = null!;
         [Column(TypeName = "Varchar(500)")] public string? ImageFile { get; set; }
 
-        public virtual IEnumerable<Song> Songs { get; set; } = null!;
+        [ValidateNever]public virtual IEnumerable<Song> Songs { get; set; } = null!;
     }
 }

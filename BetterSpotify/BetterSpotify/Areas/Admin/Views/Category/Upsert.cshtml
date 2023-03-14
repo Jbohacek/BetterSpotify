@@ -1,0 +1,22 @@
+﻿
+@model Category
+@{
+    ViewData["Title"] = "Upsert";
+}
+
+<h1>Upsert</h1>
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder=" " asp-for="Name">
+        <label class ="bla-text"  for="floatingInput" asp-for="Name"></label>
+    </div>  
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder=" " asp-for="ColorHex">
+        <label class ="bla-text"  for="floatingInput" asp-for="ColorHex"></label>
+    </div> 
+    <div class="form-floating mb-3">
+        <input type="file" name ="File" class="form-control" id="floatingInput" placeholder=" " asp-for="ImageFile">
+    </div> 
+    <button class="btn btn-primary" type="submit">Publish</button>
+</form>

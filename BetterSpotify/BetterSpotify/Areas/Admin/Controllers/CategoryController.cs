@@ -27,15 +27,15 @@ namespace BetterSpotifyWeb.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(BetterSpotify.Models.Database.User item, IFormFile? file)
+        public IActionResult Upsert(BetterSpotify.Models.Database.Category item, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
                 string wwwRooPath = _webHostEnvironment.WebRootPath;
                 if (file != null)
                 {
-                    string filename = Guid.NewGuid().ToString() + "ProfilePic";
-                    var uploads = Path.Combine(wwwRooPath, @"images/ProfilePics");
+                    string filename = Guid.NewGuid().ToString() + "CategoryPics";
+                    var uploads = Path.Combine(wwwRooPath, @"images/CategoryPics");
                     var extension = Path.GetExtension(file.FileName);
 
                     using (var filestream = new FileStream(Path.Combine(uploads, filename + extension), FileMode.Create))
@@ -43,19 +43,11 @@ namespace BetterSpotifyWeb.Areas.Admin.Controllers
                         file.CopyTo(filestream);
                     }
 
-                    item.ImageFile = @"\images\ProfilePics\" + filename + extension;
+                    item.ImageFile = @"\images\CategoryPics\" + filename + extension;
 
                 }
 
-                for (int i = 0; i != 4; i++)
-                {
-                    item.AddId += new Random().Next(0, 9);
-                }
-
-                item.DateOfRegistration = DateTime.Now;
-                item.Password = Encription.Encrypt(item.Password);
-
-                _unitOfWork.Users.Add(item);
+                _unitOfWork.Category.Add(item);
                 _unitOfWork.Save();
             }
 
