@@ -31,8 +31,11 @@ namespace BetterSpotify.Models.Database
         [Column(TypeName = "Varchar(500)")] public string ImageFile { get; set; } = "Resources/Image/DefaultAlbumPic";
         [Column(TypeName = "Varchar(500)")] public string SongFile { get; set; } = null!;
 
-        [Column(TypeName = "Date")] public DateTime DateOfRelease { get; set; }
-        [IgnoreDataMember] public string GetDateOfRelease => DateOfRelease.ToShortDateString();
+        [Column(TypeName = "Date"), Required] public DateTime DateOfRelease { get; set; }
+        [IgnoreDataMember] public string GetDateOfRelease
+        {
+            get { return DateOfRelease.ToShortDateString(); }
+        }
 
 
         public string ToScript()
