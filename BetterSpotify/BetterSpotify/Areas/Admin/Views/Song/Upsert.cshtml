@@ -95,9 +95,10 @@
                     </div >
                 </div>
                    <div class="col">
-                    <div class="form-check mb-3">
-                        <input asp-for="DateOfRelease" class="form-check-input" type="checkbox" value="True" id="flexCheckDefault">
-                        <label asp-for="DateOfRelease" class="form-check-label" for="flexCheckDefault"></label>
+                    <div class="form-floating mb-3">
+                        <input asp-for="GetDateOfRelease" type="date" class="form-control" id="floatingInput" placeholder=" ">
+                        <label asp-for="GetDateOfRelease" for="floatingInput" class="bla-text">Date Of Release</label>
+                        <span asp-validation-for="GetDateOfRelease"></span>
                     </div >
                 </div>
             </div>

@@ -24,7 +24,7 @@ function loadDataTable()
                 { "data": "duration", "width": "10%" },
                 { "data": "imageFile", "width": "15%" },
                 { "data": "songFile", "width": "15%" },
-                { "data": "dateOfRelease", "width": "15%" },
+                { "data": "getDateOfRelease", "width": "15%" },
             ]
 
         },
