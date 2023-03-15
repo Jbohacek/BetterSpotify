@@ -30,7 +30,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="NAudio" Version="2.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
@@ -74,6 +75,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\CategoryPics\" />
+    <Folder Include="wwwroot\images\SongPics\" />
     <Folder Include="wwwroot\images\ProfilePics\" />
   </ItemGroup>
 

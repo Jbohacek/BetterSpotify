@@ -1,10 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-@model IEnumerable<Song>
+﻿
 @{
     ViewData["Title"] = "Index";
 }
@@ -13,41 +7,44 @@
     * {
         color: white;
     }
+
     option {
         color: black;
     }
 
 </style>
 
+
 <a asp-controller="Overview" asp-action="Index" class="btn btn-info">Back</a>
 
 <h1 class="display-2 mt-3">List of songs</h1>
-<p class="lead ms-3">AC - Active account<br/>V - Verified account</p>
+
 <div class="text-end mb-5">
     <a class="btn btn-primary fs-3 p-2" asp-action="Upsert"><i class="bi bi-plus-square"></i> Add song</a>
 </div>
 
-
-<table id="tblData" class="table shadow-lg" style="color: white">
+<table id="tblData" class="table shadow-lg">
     <thead>
-        <tr>
-            <th>ID Song</th>
-            <th>ID Album</th>
+    <tr>
+        <th>ID Song</th>
+        <th>Actions</th>
+        <th>Title</th>
+    @*            <th>ID Album</th>
             <th>ID User</th>
             <th>ID Category</th>
-            <th>Title</th>
+            
             <th>DiscNo</th>
             <th>TrackNo</th>
             <th>Duration</th>
             <th>Image File</th>
             <th>Song File</th>
             <th>Date Of Release</th>
-        </tr>
+        </tr>*@
     </thead>
     <tbody style="color: white"></tbody>
 </table>
 
 @section Scripts
-    { 
-        <script src="~/js/TableView/song.js"></script>
+{ 
+    <script src="~/js/TableView/song.js"></script>
 }
