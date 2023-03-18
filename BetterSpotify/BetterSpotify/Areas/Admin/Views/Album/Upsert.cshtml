@@ -3,14 +3,57 @@
     ViewData["Title"] = "Upsert";
 }
 
-<h1>Upsert</h1>
+<h1 class="display-2">@(Model.album.IdAlbum == 0 ? "Create" : "Edit") Album</h1>
+
 <form asp-action="Upsert" method="post" enctype="multipart/form-data">
-    <div>
-        <select asp-for="album.IdUser" asp-items="@Model.ListUsers" class="form-select">
-            <option disabled selected>--Select Category--</option>
-        </select>
+    
+    <input asp-for="album.IdAlbum" hidden/>
+    <input asp-for="album.DateOfPublish" hidden />
+    <input asp-for="album.ImageFile" hidden/>
+
+    <div class="row">
+        <div class="col-8">
+            <div class="form-floating mb-3">
+                <input asp-for="album.Title" type="text" class="form-control" id="floatingInput" placeholder=" ">
+                <label asp-for="album.Title" for="floatingInput" class="bla-text">Title</label>
+                <span asp-validation-for="album.Title"></span>
+            </div >
+            <div class="form-floating mb-3">
+                <textarea asp-for="album.Description" type="text" class="form-control" id="floatingInput" placeholder=" " style="height: 100px"></textarea>
+                <label asp-for="album.Description" for="floatingInput" class="bla-text">Description</label>
+                <span asp-validation-for="album.Description"></span>
+            </div>
+    
+            <div class="form-floating">
+                <select class="form-select" asp-for="album.IdUser" asp-items="@Model.ListUsers" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected disabled>Open this select menu</option>
+                </select>
+                <label class="bla-text" for="floatingSelect">Works with selects</label>
+            </div>
+        </div>
+        <div class="col-4">
+            @if (Model.album.IdAlbum == 0)
+            {
+                <img class="img-thumbnail mb-2" src="~/images/ProfilePics/2f0218fe-47ca-449b-9f7f-f11aa5409d31ProfilePic.jpg"/>
+            }
+            else
+            {
+                <img class="img-thumbnail mb-2" src="@Model.album.ImageFile"/>
+            }
+
+            <div class="my-2">
+                <label asp-for="album.ImageFile"></label>
+                <input asp-for="album.ImageFile" name="File" type="file" class="form-control">
+                <span asp-validation-for="album.ImageFile"></span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-info fs-2 px-3" asp-action="Index">Back</button>
+            <button class="btn btn-primary fs-2 px-3" type="submit">@(Model.album.IdAlbum == 0 ? "Create" : "Edit")</button>
+        </div>
     </div>
-    <div>
-        <input type="file" name="File" asp-for="album.ImageFile" />
-    </div>
+    
+
+    
+
 </form>

@@ -75,6 +75,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\CategoryPics\" />
+    <Folder Include="wwwroot\images\AlbumPics\" />
     <Folder Include="wwwroot\images\SongPics\" />
     <Folder Include="wwwroot\images\ProfilePics\" />
   </ItemGroup>
