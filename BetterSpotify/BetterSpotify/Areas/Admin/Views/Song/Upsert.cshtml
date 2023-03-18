@@ -27,7 +27,7 @@
                 </div >
                 <div class="row">
                     <h4>Additional information</h4>
-                    <div class="col">
+                    <div class="col-2">
                         <div class="form-floating mb-3">
                             <input asp-for="song.DiscNo" type="number" class="form-control" id="floatingInput" placeholder=" ">
                             <label asp-for="song.DiscNo" for="floatingInput" class="bla-text">DiscNo</label>
@@ -35,14 +35,23 @@
                         </div >
                     </div>
 
-                    <div class="col">
+                    <div class="col-2">
                         <div class="form-floating mb-3">
                             <input asp-for="song.TrackNo" type="text" class="form-control" id="floatingInput" placeholder=" ">
                             <label asp-for="song.TrackNo" for="floatingInput" class="bla-text">TrackNo</label>
                             <span asp-validation-for="song.TrackNo"></span>
                         </div >
                     </div>
-                    <div class="col d-flex flex-column fs-5">
+                    <div class="col-4">
+                        <div class="form-floating">
+                            <select class="form-select" asp-for="song.IdAlbum" asp-items="@Model.AlbumList" id="floatingSelect" aria-label="Floating label select example">
+                                <option selected disabled>Open this select menu</option>
+                            </select>
+                            <label class="bla-text" for="floatingSelect">Select Album</label>
+                        </div>
+                    </div>
+
+                    <div class="col-4 d-flex flex-column fs-5">
                         <div class="form-check form-switch">
                             <input asp-for="song.Verified" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                             <label class="form-check-label" for="flexSwitchCheckDefault">Verified</label>
