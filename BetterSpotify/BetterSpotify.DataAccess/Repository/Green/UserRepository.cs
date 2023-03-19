@@ -21,7 +21,7 @@ namespace BetterSpotify.DataAccess.Repository.Green
 
         public new void Add(User item)
         {
-            item.Password = Encription.Encrypt(item.Password);
+            item.Password = Encryption.Encrypt(item.Password,"123456AB");
             _context.TbUsers.Add(item);
         }
     }

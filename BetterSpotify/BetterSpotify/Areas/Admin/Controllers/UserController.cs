@@ -73,7 +73,7 @@ namespace BetterSpotifyWeb.Areas.Admin.Controllers
                     }
 
                     item.DateOfRegistration = DateTime.Now;
-                    item.Password = Encription.Encrypt(item.Password);
+                    item.Password = Encryption.Encrypt(item.Password, "123456AB");
 
                     _unitOfWork.Users.Add(item);
                     _unitOfWork.Save();
