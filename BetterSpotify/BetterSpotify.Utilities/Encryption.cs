@@ -9,6 +9,20 @@ namespace BetterSpotify.Models
         private const int BlockSize = 128;
         private const int Iterations = 1000;
 
+
+        /*
+            Stale nefunguje :c
+
+        https://localhost:44385/User/login
+
+            Otestovano na LoginController
+            email: kouz@neco.cz
+            password: qwert123
+
+            password - bude heslo cim se encyryptuje
+            PlainText - co
+        */
+
         public static string Encrypt(string plainText, string password)
         {
             byte[] salt = GenerateRandomSalt();
