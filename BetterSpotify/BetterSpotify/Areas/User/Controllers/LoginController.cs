@@ -29,7 +29,9 @@ namespace BetterSpotifyWeb.Areas.User.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Index(BetterSpotify.Models.Database.User user)
         {
-            var Finded = _unitOfWork.Users.GetAll().FirstOrDefault(x => x.Email == user.Email && x.Password == user.Password);
+            var nasel = _unitOfWork.Users.GetFirstOrDefault(x => x.Email == user.Email);
+            var heslajeho = Encryption.Decrypt(nasel.Password, "123456AB");
+            var Finded = _unitOfWork.Users.GetAll().FirstOrDefault(x => x.Email == user.Email && Encryption.Decrypt(x.Password, "123456AB") == user.Password );
             if (Finded != null) return RedirectToAction("Success");
             return View();
         }

@@ -40,7 +40,7 @@ namespace BetterSpotify.Models.Database
 
 
         // Encrypt 
-        [PasswordPropertyText, Column(TypeName = "Varchar(100)"), Required] public string Password { get; set; } = null!;
+        [PasswordPropertyText, Column(TypeName = "Varchar(1000)"), Required] public string Password { get; set; } = null!;
 
 
         [Column(TypeName = "Bit"), Required, DisplayName("Active account"), ValidateNever] public bool ActiveAccount { get; set; }
