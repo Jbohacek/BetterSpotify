@@ -71,6 +71,19 @@ namespace BetterSpotify.Utilities
             return "";
         }
 
+        public void DeleteFile(string path)
+        {
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
+
+        public void ControllPath()
+        {
+
+        }
+
 
         private static FileManager instance;
 
