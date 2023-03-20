@@ -8,42 +8,29 @@ namespace encryption
     {
         static void Main(string[] args)
         {
-            //string plainText = "Hello, world!";
-            //string password = "myPassword123";
+            var bitos = new byte[] { 176, 36, 88, 139, 78, 237, 42, 255 };
+            var has = "0C1B790311E5038A";
 
-            //string encryptedText = Encryption.Encrypt(plainText, password);
-            //Console.WriteLine("Encrypted text: " + encryptedText);
+            var vys = Encryption.VerifyPassword("123", has, bitos);
 
-            //string decryptedText = Encryption.Decrypt(encryptedText, password);
-            //Console.WriteLine("Decrypted text: " + decryptedText);
+            Console.WriteLine(vys);
+            Console.WriteLine();
+            //Funguje to
 
-            const int keySize = 64;
-            const int iterations = 350000;
-            HashAlgorithmName hashAlgorithm = HashAlgorithmName.SHA512;
-            string HashPasword(string password, out byte[] salt)
+
+
+            var hash = Encryption.HashPasword("123", out var x);
+            Console.WriteLine(hash);
+            foreach (var VARIABLE in x)
             {
-                salt = RandomNumberGenerator.GetBytes(keySize);
-                var hash = Rfc2898DeriveBytes.Pbkdf2(
-                    Encoding.UTF8.GetBytes(password),
-                    salt,
-                    iterations,
-                    hashAlgorithm,
-                    keySize);
-                return Convert.ToHexString(hash);
-            }
-            bool VerifyPassword(string password, string hash, byte[] salt)
-            {
-                var hashToCompare = Rfc2898DeriveBytes.Pbkdf2(password, salt, iterations, hashAlgorithm, keySize);
-                return hashToCompare.SequenceEqual(Convert.FromHexString(hash));
+                Console.WriteLine(VARIABLE);
             }
 
-            var h = (HashPasword("Dobry den", out var x));
+            // Je potreba ulozit hash a byte[] v databazi
 
-            encryption.NoSet.Default.Hash = h;
-            encryption.NoSet.Default.Sol = x.ToString();
-            encryption.NoSet.Default.Save();
-           // (VerifyPassword("Dobry den", h, x));
-            Console.WriteLine(verify);
+            /*
+             * Pro otestovani musis vysledek hash zkopírovat do "has" a do "bitos" ty čisla
+             */
         }
 
     }
