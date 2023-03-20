@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace BetterSpotify.Models.Database
 {
@@ -14,7 +15,7 @@ namespace BetterSpotify.Models.Database
         //Foreign
 
         [ForeignKey("User")] public int IdUser { get; set; }
-        public User User { get; set; } = null!;
+        [ValidateNever] public User User { get; set; } = null!;
 
         // Parameters
 
@@ -25,6 +26,6 @@ namespace BetterSpotify.Models.Database
         [Column(TypeName = "Date"), Required] public DateTime DateOfPublish { get; set; } = DateTime.Now;
         [IgnoreDataMember] public string GetDateOfPublish { get { return DateOfPublish.ToShortDateString(); } }
 
-        public virtual ICollection<Song> Songs { get; set; } = null!;
+        [ValidateNever]public virtual ICollection<Song> Songs { get; set; } = null!;
     }
 }

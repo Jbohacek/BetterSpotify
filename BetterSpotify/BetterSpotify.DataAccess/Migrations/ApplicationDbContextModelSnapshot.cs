@@ -155,6 +155,9 @@ namespace BetterSpotify.Migrations
                         .IsRequired()
                         .HasColumnType("Varchar(500)");
 
+                    b.Property<bool>("NoCopyRight")
+                        .HasColumnType("Bit");
+
                     b.Property<string>("SongFile")
                         .IsRequired()
                         .HasColumnType("Varchar(500)");
@@ -165,6 +168,9 @@ namespace BetterSpotify.Migrations
 
                     b.Property<int?>("TrackNo")
                         .HasColumnType("Int");
+
+                    b.Property<bool>("Verified")
+                        .HasColumnType("Bit");
 
                     b.HasKey("IdSong");
 
