@@ -19,5 +19,13 @@ namespace BetterSpotifyWeb.Areas.User.Controllers
 
             return View(listSongs);
         }
+
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var list = _unitOfWork.Songs.GetAll();
+            return Json(list);
+        }
     }
 }

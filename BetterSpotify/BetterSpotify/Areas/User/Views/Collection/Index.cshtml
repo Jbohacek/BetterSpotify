@@ -21,20 +21,24 @@
     </tr>
     </thead>
     <tbody>
-        @foreach (var song in Model)
-        {
-            <tr scope="row">
-                <td>@song.IdSong</td>
-                <td>@song.Title</td>
-                <td>@song.User.NickName</td>
-                <td>@song.DateOfRelease.ToShortDateString()</td>
-                @*<td>
+    @foreach (var song in Model)
+    {
+        <tr scope="row">
+            <td>@song.IdSong</td>
+            <td>@song.Title</td>
+            <td>@song.User.NickName</td>
+            <td>@song.DateOfRelease.ToShortDateString()</td>
+            @*<td>
                     <audio controls>
                         <source src="~/music/musicfiles/@song.SongFile" type="audio/mpeg"/>
                     </audio>
                 </td>*@
-                <td><div class="btn btn-primary" onclick="StartTrack((@song.IdSong),'@song.Title','@song.User.NickName','@song.SongFile')"> Play</div></td>
-            </tr>
-        }
+            <td><div class="btn btn-primary" onclick="StartTrack((@song.IdSong),'@song.Title','@song.User.NickName','@song.SongFile')"> Play</div></td>
+        </tr>
+    }
     </tbody>
 </table>
+
+@section scripts{
+    <script src="~/js/Fujky.js"></script>
+}

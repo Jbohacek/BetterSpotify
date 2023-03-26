@@ -18,6 +18,7 @@
     <Content Remove="wwwroot\images\Website\Home\Earth.png" />
     <Content Remove="wwwroot\images\Website\Home\skyland.png" />
     <Content Remove="wwwroot\images\Website\Spotify.png" />
+    <Content Remove="wwwroot\js\Fujky.js" />
     <Content Remove="wwwroot\music\musicfiles\Electronic\AWorldAway.mp3" />
     <Content Remove="wwwroot\music\musicfiles\Pop\BEAUZMemories.mp3" />
     <Content Remove="wwwroot\music\musicfiles\Rock\EvertideDissipate.mp3" />
@@ -71,6 +72,7 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Areas\User\Views\Collection\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\Fujky.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,6 +80,10 @@
     <Folder Include="wwwroot\images\AlbumPics\" />
     <Folder Include="wwwroot\images\SongPics\" />
     <Folder Include="wwwroot\images\ProfilePics\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\Fujky.js" />
   </ItemGroup>
 
 </Project>
