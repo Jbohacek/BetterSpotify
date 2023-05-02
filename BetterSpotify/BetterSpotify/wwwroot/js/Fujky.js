@@ -1,39 +1,39 @@
 ﻿
 
 
-async function sleep(msec) {
-    return new Promise(resolve => setTimeout(resolve, msec));
-}
+//async function sleep(msec) {
+//    return new Promise(resolve => setTimeout(resolve, msec));
+//}
 
-var neco = null;
+//var neco = null;
 
-$.getJSON("/User/Collection/GetAll", async function (data) {
+//$.getJSON("/User/Collection/GetAll", async function (data) {
 
-    neco = data;
-
-
-});
-
-function funguj (data) {
-    console.log('click');
-    console.log(data);
-    console.log(neco);
-}
-
-document.getElementById('but').addEventListener('click',funguj);;
+//    neco = data;
 
 
-//Funkcni
+//});
 
-var info = null;
+//function funguj (data) {
+//    console.log('click');
+//    console.log(data);
+//    console.log(neco);
+//}
 
-fetch("/User/Collection/GetAll").then(response => response.json())
-    .then(data => info = data).then(infoZob);
+//document.getElementById('but').addEventListener('click',funguj);;
 
-function infoZob() {
-    console.log('InfoZob');
-    console.log(info);
-}
+
+////Funkcni
+
+//var info = null;
+
+//fetch("/User/Collection/GetAll").then(response => response.json())
+//    .then(data => info = data).then(infoZob);
+
+//function infoZob() {
+//    console.log('InfoZob');
+//    console.log(info);
+//}
 
 //run();
 
@@ -42,10 +42,23 @@ function infoZob() {
 //    console.log(neco);
 //}
 
+let url = '/User/Collection/Getall';
 
-var myViewModel = {
-    personName: 'Bob',
-    personAge: 123
-};
+console.log('pokus')
 
-ko.applyBindings(myViewModel);
+fetch(url)
+    .then(res => res.json())
+    .then(out =>
+        AppViewModel.firstName() = out)
+    .catch(err => { throw err });
+
+
+
+function AppViewModel() {
+    var self = this;
+    this.firstName = ko.observableArray();
+    
+}
+
+
+ko.applyBindings(AppViewModel);
