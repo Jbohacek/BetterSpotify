@@ -41,3 +41,11 @@ function infoZob() {
 //    await sleep(1000);
 //    console.log(neco);
 //}
+
+
+var myViewModel = {
+    personName: 'Bob',
+    personAge: 123
+};
+
+ko.applyBindings(myViewModel);
