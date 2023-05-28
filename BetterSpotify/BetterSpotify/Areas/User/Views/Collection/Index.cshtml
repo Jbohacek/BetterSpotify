@@ -2,16 +2,55 @@
 @model IEnumerable<Song>
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "";
     Layout = "_Layout";
 }
 
-
+@*
 <h2>title</h2>
 <button class="btn btn-primary" id="but">Click</button>
 <span class="displayMusic"></span>
 
 
+*@
+<div class="d-flex justify-content-between" style="font-size: 40px; margin-bottom: 40px">
+    <div style="align-self: center; font-size: 50px; font-weight: 500">Shortcuts</div>
+    <input placeholder="Search" style="border-radius: 20px; padding: 10px"/>
+    
+    
+</div>
+<div class="d-flex justify-content-around">
+    <div style="width: 230px; height: 360px; background-color: red; border-radius: 15px; margin: 0 1rem">
+        <div style="text-align: center; padding: 30px 0; font-size: 40px; font-weight: 700" >Pop</div>
+    </div>
+    <div style="width: 230px; height: 360px; background-color: red; border-radius: 15px; margin: 0 1rem">
+        <div style="text-align: center; padding: 30px 0; font-size: 40px; font-weight: 700">Pop</div>
+    </div>
+    <div style="width: 230px; height: 360px; background-color: red; border-radius: 15px; margin: 0 1rem">
+        <div style="text-align: center; padding: 30px 0; font-size: 40px; font-weight: 700" >Pop</div>
+    </div>
+    <div style="width: 230px; height: 360px; background-color: red; border-radius: 15px; margin: 0 1rem">
+        <div style="text-align: center; padding: 30px 0; font-size: 40px; font-weight: 700" >Pop</div>
+    </div>
+    <div style="width: 230px; height: 360px; background-color: red; border-radius: 15px; margin: 0 1rem">
+        <div style="text-align: center; padding: 30px 0; font-size: 40px; font-weight: 700" >Pop</div>
+    </div>
+</div>
+<div>
+    <div style="align-self: center; font-size: 50px; font-weight: 500">Hottest releases this week</div>
+</div>
+<div class="d-flex justify-content-around">
+    <div style="width: 200px; height: 250px; background-color: black; border-radius: 15px; margin: 0 1rem; display: flex; flex-direction: column">
+        <div style="background-color: blue; width: 170px; height: 170px; align-self: center; margin-top: 13px"></div>
+        <div style="margin-left: 12px">
+            <div style="font-weight: 500">Love</div>
+            <div>Ryan jones</div>
+        </div>
+        
+    </div>
+    
+</div>
+@*
 <table class="table table-dark">
     <thead>
     <tr>
@@ -30,17 +69,18 @@
             <td>@song.Title</td>
             <td>@song.User.NickName</td>
             <td>@song.DateOfRelease.ToShortDateString()</td>
-            @*<td>
+            <td>
                     <audio controls>
                         <source src="~/music/musicfiles/@song.SongFile" type="audio/mpeg"/>
                     </audio>
-                </td>*@
+                </td>
             <td><div class="btn btn-primary" onclick="StartTrack((@song.IdSong),'@song.Title','@song.User.NickName','@song.SongFile')"> Play</div></td>
         </tr>
     }
     </tbody>
 </table>
-
+*@
 @section scripts{
-    <script src="~/js/Fujky.js"></script>
+    <script src="~/js/DiscoverScreen.js"></script>
+    <script src="~/js/MusicPlayer.js"></script>
 }
