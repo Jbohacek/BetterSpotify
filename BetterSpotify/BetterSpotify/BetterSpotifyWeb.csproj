@@ -75,6 +75,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Api\Data\" />
+    <Folder Include="Areas\Api\Models\" />
+    <Folder Include="Areas\Api\Views\" />
     <Folder Include="wwwroot\images\CategoryPics\" />
     <Folder Include="wwwroot\images\AlbumPics\" />
     <Folder Include="wwwroot\images\SongPics\" />
