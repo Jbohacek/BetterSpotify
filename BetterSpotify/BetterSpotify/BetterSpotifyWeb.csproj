@@ -1,17 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Controllers\**" />
-    <Content Remove="Controllers\**" />
-    <EmbeddedResource Remove="Controllers\**" />
-    <None Remove="Controllers\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Remove="wwwroot\images\Website\Home\Bloom.png" />
@@ -72,10 +65,12 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Areas\User\Views\Collection\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Api\Index.cshtml" />
     <_ContentIncludedByDefault Remove="wwwroot\js\Fujky.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\" />
     <Folder Include="wwwroot\images\CategoryPics\" />
     <Folder Include="wwwroot\images\AlbumPics\" />
     <Folder Include="wwwroot\images\SongPics\" />
@@ -84,6 +79,10 @@
 
   <ItemGroup>
     <None Include="wwwroot\js\Fujky.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Api\Index.cshtml" />
   </ItemGroup>
 
 </Project>
