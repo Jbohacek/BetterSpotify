@@ -159,14 +159,13 @@
                     <h5 class="modal-title" id="exampleModalLabel">Login</h5>
                   </div>
                   <div class="modal-body">
-                    <form>
+                      <form method="post" asp-area="Api" asp-controller="User" asp-action="Verify">
                       <!-- Email input -->
                       <div class="form-outline mb-4" id="LoginModal">
-                        <input
-                          type="email"
+                        <input type="text"
                           id="inputemail"
                           class="form-control"
-                        />
+                                                   name="UserName" />
                         <label class="form-label" for="inputemail"
                           >Email address</label
                         >
@@ -174,11 +173,10 @@
 
                       <!-- Password input -->
                       <div class="form-outline mb-4">
-                        <input
-                          type="password"
+                        <input type="password"
                           id="password"
                           class="form-control"
-                        />
+                                                   name="EncPass" />
                         <label class="form-label" for="password"
                           >Password</label
                         >
@@ -214,7 +212,7 @@
                       <!-- Submit button -->
                       <div style="text-align: center">
                         <button
-                          type="button"
+                          type="submit"
                           class="btn btn-primary btn-block mb-4"
                         >
                           Sign in

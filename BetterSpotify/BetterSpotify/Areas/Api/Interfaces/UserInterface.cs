@@ -7,7 +7,7 @@ namespace BetterSpotifyWeb.Areas.Api.Interfaces
         [HttpGet]
         public IActionResult GetAll(int page, int pageCount, bool order, string? searchText, string? orderBy, string[]? country);
 
-        [HttpGet]
-        public IActionResult Verify(string Username, string passEnc);
+        [HttpPost]
+        public IActionResult Verify();
     }
 }

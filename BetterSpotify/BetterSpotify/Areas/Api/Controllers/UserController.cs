@@ -11,11 +11,13 @@ namespace BetterSpotifyWeb.Areas.Api.Controllers
             return Json("Ahoj");
         }
 
-        public IActionResult Verify(string Username, string passEnc)
+        [HttpPost]
+        public IActionResult Verify()
         {
-            bool Verified = false;
+            string? userName = HttpContext.Request.Form["UserName"];
+            string? encPass = HttpContext.Request.Form["EncPass"];
 
-            return Json(Verified);
+            return Json(true);
         }
     }
 }
