@@ -1,7 +1,9 @@
 ﻿using BetterSpotify.DataAccess.Data;
 using BetterSpotify.DataAccess.Repository._IRepository;
 using BetterSpotify.DataAccess.Repository._IRepository.Green;
+using BetterSpotify.DataAccess.Repository._IRepository.Yellow;
 using BetterSpotify.DataAccess.Repository.Green;
+using BetterSpotify.DataAccess.Repository.Yellow;
 
 namespace BetterSpotify.DataAccess.Repository
 {
@@ -14,6 +16,7 @@ namespace BetterSpotify.DataAccess.Repository
         public IArtistRepository Artist { get; private set; }
         public ISongRepository Songs { get; private set; }
         public ICategoryRepository Category { get; private set; }
+        public IRoleRepository Roles { get; private set; }
 
         public bool DataBaseConnected { get; private set; }
 
@@ -25,6 +28,7 @@ namespace BetterSpotify.DataAccess.Repository
             Artist = new ArtistRepository(_context);
             Songs = new SongRepository(_context);
             Category = new CategoryRepository(_context);
+            Roles = new RoleRepository(_context);
 
 
             DataBaseConnected = db.Database.CanConnect();

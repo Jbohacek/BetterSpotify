@@ -15,9 +15,10 @@ namespace BetterSpotify.Models.Database
         [Key] public int IdUser { get; set; }
 
         //Foreign
-        public int? IdRole { get; set; }
+        [ForeignKey("Role")] public int? IdRole { get; set; }
         [ForeignKey("Artist")] public int? IdArtist { get; set; }
         public Artist? Artist { get; set; }
+        public Role? Role { get; set; }
         public int? IdUserProfile { get; set; }
         public int? IdTokenWallet { get; set; }
         //Collections

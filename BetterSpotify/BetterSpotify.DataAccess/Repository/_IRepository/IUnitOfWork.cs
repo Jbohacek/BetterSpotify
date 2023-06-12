@@ -1,4 +1,5 @@
 ﻿using BetterSpotify.DataAccess.Repository._IRepository.Green;
+using BetterSpotify.DataAccess.Repository._IRepository.Yellow;
 
 namespace BetterSpotify.DataAccess.Repository._IRepository
 {
@@ -9,6 +10,7 @@ namespace BetterSpotify.DataAccess.Repository._IRepository
         IArtistRepository Artist { get; }
         ISongRepository Songs { get; }
         ICategoryRepository Category { get; }
+        IRoleRepository Roles { get; }
         bool DataBaseConnected { get; }
         void Save();
     }

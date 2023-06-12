@@ -9,7 +9,8 @@ namespace BetterSpotify.DataAccess.Data
         public DbSet<User> TbUsers { get; set; } = null!;
         public DbSet<Artist> TbArtists { get; set; } = null!;
         public DbSet<Song> TbSongs { get; set; } = null!;
-        public DbSet<Category> TbCategories { get; set; }
+        public DbSet<Category> TbCategories { get; set; } = null!;
+        public DbSet<Role> TbRoles { get; set; } = null!;
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
