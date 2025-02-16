@@ -21,7 +21,7 @@ namespace BetterSpotifyWeb
 
             // AspifyConnetion - Databaze na internetu, která má data
 
-            var databaseName = "AspifyConnetion";
+            var databaseName = "LocalServer";
 
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
                 builder.Configuration.GetConnectionString(databaseName)
